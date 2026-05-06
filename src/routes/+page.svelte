@@ -1,0 +1,229 @@
+<script>
+  import Icon from '$lib/components/Icon.svelte';
+  import HeroElectric from '$lib/components/HeroElectric.svelte';
+  import Ticker from '$lib/components/Ticker.svelte';
+  import Counter from '$lib/components/Counter.svelte';
+  import { SERVICES, PROJECTS, CLIENTS, PROCESS_STEPS, TESTIMONIALS } from '$lib/data.js';
+
+  let filter = 'hepsi';
+  $: filtered = filter === 'hepsi' ? PROJECTS : PROJECTS.filter(p => p.cat === filter);
+
+  const filters = [
+    { id: 'hepsi', label: 'Tümü' },
+    { id: 'endustriyel', label: 'Endüstriyel' },
+    { id: 'yenilenebilir', label: 'Yenilenebilir' },
+    { id: 'otomasyon', label: 'Otomasyon' },
+    { id: 'aydinlatma', label: 'Aydınlatma' }
+  ];
+
+  const tileSpans = ['span-3', 'span-3', 'span-2', 'span-2', 'span-2', 'span-6'];
+</script>
+
+<svelte:head><title>Kösek Enerji — Endüstriyel Elektrik & Otomasyon</title></svelte:head>
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-glow"></div>
+    <div class="hero-bg-noise"></div>
+  </div>
+  <HeroElectric/>
+
+  <div class="container hero-main">
+    <div class="hero-top fade-in">
+      <div class="hero-top-left">
+        <div class="eyebrow"><span class="blink"></span>SİSTEM AKTİF · ANKARA OSTİM</div>
+        <div class="hero-id">REF · KSK-2026 / 0428 · LIVE</div>
+      </div>
+      <div class="hero-voltage">
+        <div class="voltage-readout"><div class="label">Voltaj</div><div class="value">400 kV</div></div>
+        <div class="voltage-readout"><div class="label">Frekans</div><div class="value">50.0 Hz</div></div>
+        <div class="voltage-readout"><div class="label">PF</div><div class="value">0.98</div></div>
+      </div>
+    </div>
+
+    <div class="hero-headline fade-in fade-in-2">
+      <h1 class="display-xl">
+        <span class="line">ENDÜSTRİNİN</span>
+        <span class="line"><span class="accent">ENERJİSİNİ</span> TAŞIYAN</span>
+        <span class="line"><span class="outline">MÜHENDİSLİK</span> GÜCÜ.</span>
+      </h1>
+    </div>
+
+    <div class="hero-bottom fade-in fade-in-3">
+      <p class="hero-lead">
+        Yüksek gerilim tesislerinden güneş enerjisi santrallerine, pano imalatından SCADA otomasyonuna; 2001'den bu yana Anadolu sanayisinin enerjisini kuran, taşıyan ve koruyan mühendislik markası.
+      </p>
+      <div class="hero-lead-cta">
+        <div class="hero-cta-buttons">
+          <a href="/iletisim" class="btn btn-primary">Ücretsiz Keşif <Icon name="Arrow" size={16}/></a>
+          <a href="/hizmetler" class="btn btn-ghost">Hizmetlerimiz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Ticker/>
+</section>
+
+<div class="hero-mega-band">
+  <div class="mega-marquee">
+    <span>YÜKSEK GERİLİM <span class="dot"></span> PANO İMALATI <span class="dot"></span> GES <span class="dot"></span> OTOMASYON <span class="dot"></span> AYDINLATMA <span class="dot"></span> BAKIM <span class="dot"></span></span>
+    <span>YÜKSEK GERİLİM <span class="dot"></span> PANO İMALATI <span class="dot"></span> GES <span class="dot"></span> OTOMASYON <span class="dot"></span> AYDINLATMA <span class="dot"></span> BAKIM <span class="dot"></span></span>
+  </div>
+</div>
+
+<section class="clients">
+  <div class="container">
+    <div class="clients-label">⚡ Anadolu'nun önde gelen sanayi kuruluşları bize güveniyor</div>
+    <div class="clients-grid">
+      {#each CLIENTS as c}<div class="client-logo">{c}</div>{/each}
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">/ 01 — HİZMETLER</div>
+        <h2 class="display-lg">UÇTAN UCA<br/>ELEKTRİK MÜHENDİSLİĞİ.</h2>
+      </div>
+      <a href="/hizmetler" class="head-cta">Tüm hizmetler <Icon name="ArrowUR" size={14}/></a>
+    </div>
+    <div class="services-bento">
+      {#each SERVICES as s, i}
+        <a href="/hizmetler" class="service-tile {tileSpans[i]}">
+          <div class="tile-num">/ {String(i + 1).padStart(2, '0')} / {String(SERVICES.length).padStart(2, '0')}</div>
+          <Icon name={s.icon} size={56}/>
+          <h3>{s.title}</h3>
+          <p>{s.short}</p>
+          <div class="tile-tags">
+            {#each s.tags as t}<span class="tile-tag">{t}</span>{/each}
+          </div>
+          <span class="tile-arrow"><Icon name="ArrowUR" size={18}/></span>
+        </a>
+      {/each}
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="section-head" style="margin-bottom: 50px">
+      <div>
+        <div class="eyebrow">/ 02 — RAKAMLARLA</div>
+        <h2 class="display-lg" style="max-width: 720px">SAYILARLA<br/>KÖSEK ENERJİ.</h2>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-num"><Counter to={24} suffix="+"/></div><div class="stat-label">YIL TECRÜBE</div><div class="stat-desc">2001'den bu yana kesintisiz hizmet</div></div>
+      <div class="stat"><div class="stat-num"><Counter to={340}/></div><div class="stat-label">TAMAMLANAN PROJE</div><div class="stat-desc">7 bölge, 41 il, 6 ülke</div></div>
+      <div class="stat"><div class="stat-num"><Counter to={185} suffix=" MW"/></div><div class="stat-label">KURULU GES</div><div class="stat-desc">Lisanssız & lisanslı toplam</div></div>
+      <div class="stat"><div class="stat-num"><Counter to={48}/></div><div class="stat-label">MÜHENDİS KADRO</div><div class="stat-desc">EMO sertifikalı uzman ekip</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">/ 03 — SÜREÇ</div>
+        <h2 class="display-lg">PROJEYİ NASIL<br/>HAYATA GEÇİRİYORUZ?</h2>
+      </div>
+    </div>
+    <div class="process-list">
+      {#each PROCESS_STEPS as p, i}
+        <div class="process-step">
+          <div class="process-num">{String(i + 1).padStart(2, '0')}</div>
+          <div class="process-title">{p.t}</div>
+          <div class="process-desc">{p.d}</div>
+        </div>
+      {/each}
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--bg-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line)">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">/ 04 — PROJELER</div>
+        <h2 class="display-lg">SAHADA İZ BIRAKAN<br/>TAMAMLANMIŞ İŞLER.</h2>
+      </div>
+      <div class="projects-filter">
+        {#each filters as f}
+          <button class="filter-btn" class:active={filter === f.id} on:click={() => filter = f.id}>{f.label}</button>
+        {/each}
+      </div>
+    </div>
+    <div class="projects-grid">
+      {#each filtered as p, i (p.title)}
+        <div class="project-card">
+          <div class="project-img" style="background: linear-gradient(135deg, {p.color1}25, {p.color2}10), var(--bg-deep)">
+            <svg class="project-img-pattern" viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id={`pg${i}`} x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color={p.color1} stop-opacity="0.9"/>
+                  <stop offset="1" stop-color={p.color2} stop-opacity="0.5"/>
+                </linearGradient>
+              </defs>
+              <g stroke="rgba(255,255,255,0.08)" fill="none">
+                {#each Array(10) as _, k}<line x1={k*22} y1="0" x2={k*22} y2="150"/>{/each}
+                {#each Array(8) as _, k}<line x1="0" y1={k*22} x2="200" y2={k*22}/>{/each}
+              </g>
+              <path d="M10 130 L40 80 L60 100 L90 50 L120 90 L150 30 L190 70" stroke={`url(#pg${i})`} stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="150" cy="30" r="4" fill={p.color1}/>
+              <circle cx="150" cy="30" r="12" fill={p.color1} opacity="0.25"/>
+            </svg>
+          </div>
+          <div class="project-meta">
+            <span class="project-tag">{p.tag}</span>
+            <h4>{p.title}</h4>
+            <div class="project-loc">{p.loc}</div>
+          </div>
+        </div>
+      {/each}
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">/ 05 — REFERANSLAR</div>
+        <h2 class="display-lg">MÜŞTERİLERİMİZ<br/>NE DİYOR?</h2>
+      </div>
+    </div>
+    <div class="testi-grid">
+      {#each TESTIMONIALS as t}
+        <div class="testi-card">
+          <p class="quote">{t.q}</p>
+          <div class="testi-author">
+            <div class="testi-avatar">{t.n[0]}</div>
+            <div>
+              <div class="testi-name">{t.n}</div>
+              <div class="testi-role">{t.r}</div>
+            </div>
+          </div>
+        </div>
+      {/each}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <h2>Projeniz için<br/>ücretsiz keşif.</h2>
+      <a href="/iletisim" class="cta-band-cta"><Icon name="Bolt" size={18}/> Hemen iletişime geç</a>
+    </div>
+  </div>
+  <svg class="cta-band-pattern" viewBox="0 0 1200 200" preserveAspectRatio="none">
+    <path d="M0 100 L200 100 L220 60 L260 140 L300 100 L1200 100" stroke="#000" stroke-width="2" fill="none"/>
+    <path d="M0 50 L400 50 L420 20 L460 80 L500 50 L1200 50" stroke="#000" stroke-width="1.5" fill="none" opacity="0.4"/>
+    <path d="M0 150 L600 150 L620 110 L660 180 L700 150 L1200 150" stroke="#000" stroke-width="1.5" fill="none" opacity="0.4"/>
+  </svg>
+</section>
