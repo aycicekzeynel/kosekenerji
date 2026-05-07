@@ -141,6 +141,7 @@
         <div class="eyebrow">/ 04 — PROJELER</div>
         <h2 class="display-lg">SAHADA İZ BIRAKAN<br/>TAMAMLANMIŞ İŞLER.</h2>
       </div>
+      <a href="/projeler" class="head-cta">Tüm projeler <Icon name="ArrowUR" size={14}/></a>
       <div class="projects-filter">
         {#each filters as f}
           <button class="filter-btn" class:active={filter === f.id} on:click={() => filter = f.id}>{f.label}</button>

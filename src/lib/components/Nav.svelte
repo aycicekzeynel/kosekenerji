@@ -14,7 +14,6 @@
       <span class="logo-mark"><Icon name="LogoMark" size={22}/></span>
       <span class="logo-text">
         <span>KÖSEK ENERJİ</span>
-        <small>EST · 2001</small>
       </span>
     </a>
     <ul class="nav-links" class:open>

@@ -12,7 +12,7 @@
 <Footer/>
 
 <a
-  href="https://wa.me/905325551212"
+  href="https://wa.me/905425338047"
   target="_blank"
   rel="noopener noreferrer"
   class="wa-fab"

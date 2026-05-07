@@ -21,17 +21,17 @@
         <div class="cc-icon"><Icon name="Phone" size={22}/></div>
         <div class="cc-body">
           <span class="cc-label">Telefon</span>
-          <span class="cc-main">+90 312 123 45 67</span>
-          <span class="cc-sub">7/24 Acil · +90 532 555 12 12</span>
+          <span class="cc-main">+90 542 533 80 47</span>
+          
         </div>
         <span class="cc-arrow"><Icon name="ArrowUR" size={14}/></span>
       </a>
 
-      <a href="https://wa.me/905325551212" target="_blank" rel="noopener noreferrer" class="cc cc-wa">
+      <a href="https://wa.me/905425338047" target="_blank" rel="noopener noreferrer" class="cc cc-wa">
         <div class="cc-icon cc-icon-wa"><Icon name="WhatsApp" size={22}/></div>
         <div class="cc-body">
           <span class="cc-label">WhatsApp</span>
-          <span class="cc-main">+90 532 555 12 12</span>
+          <span class="cc-main">+90 542 533 80 47</span>
           <span class="cc-sub">Hızlı mesaj · 7/24</span>
         </div>
         <span class="cc-arrow"><Icon name="ArrowUR" size={14}/></span>
@@ -52,7 +52,7 @@
         <div class="cc-body">
           <span class="cc-label">Çalışma Saatleri</span>
           <span class="cc-main">Pzt – Cmt · 08:00 – 18:00</span>
-          <span class="cc-sub">Acil servis · 7/24</span>
+          
         </div>
       </div>
 
@@ -77,7 +77,7 @@
             <Icon name="Mail" size={18}/>
             Teklif İste
           </a>
-          <a href="https://wa.me/905325551212" target="_blank" rel="noopener noreferrer" class="reach-btn reach-btn-wa">
+          <a href="https://wa.me/905425338047" target="_blank" rel="noopener noreferrer" class="reach-btn reach-btn-wa">
             <Icon name="WhatsApp" size={18}/>
             WhatsApp
           </a>
@@ -89,19 +89,19 @@
         <div class="office-detail">
           <div class="od-row">
             <span class="od-key">Şirket</span>
-            <span class="od-val">Kösek Enerji Mühendislik A.Ş.</span>
+            <span class="od-val">Kösek Enerji Mühendislik ve Elektrik Hizmetleri Sanayi Ticaret Limited Şirketi</span>
           </div>
           <div class="od-row">
             <span class="od-key">Vergi No</span>
-            <span class="od-val">1234567890 · Ankara VD</span>
+            <span class="od-val">5881221574 · Antalya Kurumlar VD</span>
           </div>
           <div class="od-row">
             <span class="od-key">Adres</span>
-            <span class="od-val">OSTİM OSB, 100. Yıl Bulv. No:42<br/>Yenimahalle / Ankara 06370</span>
+            <span class="od-val">Cumhuriyet Mah. Fatih Cad. Kılınç Apt. No:45 İç Kapı No:B<br/>Muratpaşa / Antalya</span>
           </div>
           <div class="od-row">
             <span class="od-key">Telefon</span>
-            <span class="od-val">+90 312 123 45 67</span>
+            <span class="od-val">+90 542 533 80 47</span>
           </div>
           <div class="od-row">
             <span class="od-key">E-posta</span>
@@ -141,7 +141,7 @@
   <div class="container">
     <div class="cta-band-inner">
       <h2>Projeniz için<br/>ücretsiz keşif.</h2>
-      <a href="tel:+903121234567" class="cta-band-cta"><Icon name="Phone" size={18}/> Hemen iletişime geç</a>
+      <a href="tel:+905425338047" class="cta-band-cta"><Icon name="Phone" size={18}/> Hemen iletişime geç</a>
     </div>
   </div>
 </section>

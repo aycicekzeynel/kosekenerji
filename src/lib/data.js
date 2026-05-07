@@ -58,12 +58,102 @@ export const SERVICES = [
 ];
 
 export const PROJECTS = [
-  { tag: 'GES', title: 'Konya Karatay Çatı GES', loc: '2.4 MWp · 2025', cat: 'yenilenebilir', color1: '#FFD400', color2: '#FF6B00' },
-  { tag: 'Endüstriyel', title: 'Ankara OSB Trafo Merkezi', loc: '3×1600 kVA · 2024', cat: 'endustriyel', color1: '#00D4FF', color2: '#0066FF' },
-  { tag: 'Otomasyon', title: 'Kayseri Tekstil Fabrikası', loc: 'SCADA & PLC · 2024', cat: 'otomasyon', color1: '#A855F7', color2: '#EC4899' },
-  { tag: 'Aydınlatma', title: 'İstanbul Lojistik Merkezi', loc: '85.000 m² · 2024', cat: 'aydinlatma', color1: '#FFD400', color2: '#84CC16' },
-  { tag: 'Endüstriyel', title: 'Bursa Otomotiv Tesisi', loc: 'MCC & Kompanzasyon · 2023', cat: 'endustriyel', color1: '#FF4D4D', color2: '#FF8A00' },
-  { tag: 'GES', title: 'Adana Tarımsal GES', loc: '1.8 MWp · 2023', cat: 'yenilenebilir', color1: '#84CC16', color2: '#FFD400' }
+  {
+    slug: 'konya-karatay-ges',
+    tag: 'GES', title: 'Konya Karatay Çatı GES',
+    loc: '2.4 MWp · 2025', city: 'Konya', year: '2025', metric: '2.4 MWp',
+    desc: 'Konya\'nın en büyük çatı GES projelerinden biri. 5.800 panel, 4 inverter istasyonu ve merkezi SCADA izleme sistemi ile devreye alındı. İlk yıl üretim hedefi %112 ile aşıldı.',
+    bullets: ['5.800 adet monokristal panel', '4 merkezi inverter istasyonu', 'SCADA uzaktan izleme sistemi', '25 yıl performans garantisi'],
+    cat: 'yenilenebilir', color1: '#FFD400', color2: '#FF6B00', featured: true
+  },
+  {
+    slug: 'ankara-osb-trafo',
+    tag: 'Endüstriyel', title: 'Ankara OSB Trafo Merkezi',
+    loc: '4.800 kVA · 2024', city: 'Ankara', year: '2024', metric: '4.800 kVA',
+    desc: '3 adet 1600 kVA transformatör, OG/AG pano sistemleri ve topraklama tesisatı. TEDAŞ onaylı proje.',
+    bullets: ['3×1600 kVA trafo kurulumu', 'OG şalt sahası inşaatı', 'AG dağıtım sistemi', 'TEDAŞ bağlantı projesi'],
+    cat: 'endustriyel', color1: '#00D4FF', color2: '#0066FF'
+  },
+  {
+    slug: 'kayseri-tekstil-scada',
+    tag: 'Otomasyon', title: 'Kayseri Tekstil Fabrikası',
+    loc: 'SCADA & PLC · 2024', city: 'Kayseri', year: '2024', metric: '48 PLC Noktası',
+    desc: 'Üretim hatlarının Siemens S7-1500 tabanlı tam SCADA entegrasyonu. Enerji izleme altyapısı ve operatör eğitimi tamamlandı.',
+    bullets: ['Siemens S7-1500 PLC', 'WinCC SCADA entegrasyonu', 'Enerji izleme sistemi', 'Operatör eğitimi & dokümantasyon'],
+    cat: 'otomasyon', color1: '#A855F7', color2: '#EC4899'
+  },
+  {
+    slug: 'istanbul-lojistik',
+    tag: 'Aydınlatma', title: 'İstanbul Lojistik Merkezi',
+    loc: '85.000 m² · 2024', city: 'İstanbul', year: '2024', metric: '85.000 m²',
+    desc: '85.000 m² depo alanının komple LED dönüşümü. DIALux hesaplamalı tasarım ile %62 enerji tasarrufu sağlandı.',
+    bullets: ['2.400 adet LED highbay', 'DIALux hesaplamalı tasarım', 'Hareket sensörlü kontrol', '%62 enerji tasarrufu'],
+    cat: 'aydinlatma', color1: '#FFD400', color2: '#84CC16'
+  },
+  {
+    slug: 'bursa-otomotiv-mcc',
+    tag: 'Endüstriyel', title: 'Bursa Otomotiv Tesisi',
+    loc: 'MCC & Kompanzasyon · 2023', city: 'Bursa', year: '2023', metric: '12 MCC Hücresi',
+    desc: 'Motor kontrol merkezleri, reaktif güç kompanzasyonu ve harmonik filtre sistemi. 7/24 uzaktan izleme altyapısı.',
+    bullets: ['12 hücreli MCC panosu', 'Reaktif güç kompanzasyonu', 'Harmonik filtre sistemi', '7/24 uzaktan izleme'],
+    cat: 'endustriyel', color1: '#FF4D4D', color2: '#FF8A00'
+  },
+  {
+    slug: 'adana-tarimsal-ges',
+    tag: 'GES', title: 'Adana Tarımsal GES',
+    loc: '1.8 MWp · 2023', city: 'Adana', year: '2023', metric: '1.8 MWp',
+    desc: 'Tarım arazisi üzerine çift taraflı panel uygulaması. Agrovoltaik konsept ile hem enerji üretimi hem tarım faaliyeti sürdürüldü.',
+    bullets: ['Bifacial panel sistemi', 'Agrovoltaik tesis tasarımı', 'String izleme sistemi', 'EPDK lisans danışmanlığı'],
+    cat: 'yenilenebilir', color1: '#84CC16', color2: '#FFD400'
+  },
+  {
+    slug: 'izmir-kimya-og',
+    tag: 'Endüstriyel', title: 'İzmir Kimya Fabrikası',
+    loc: '6.3 MVA · 2023', city: 'İzmir', year: '2023', metric: '6.3 MVA',
+    desc: 'Ex-proof elektrik tesisat uygulaması ve 6.3 MVA OG besleme hattı. Patlayıcı ortam sertifikasyonu tamamlandı.',
+    bullets: ['6.3 MVA yük hücresi', 'Ex-proof tesisat uygulaması', 'Gaz dedeksiyon entegrasyonu', 'ATEX sertifikasyon desteği'],
+    cat: 'endustriyel', color1: '#00D4FF', color2: '#00FFB3'
+  },
+  {
+    slug: 'gaziantep-tekstil-otomasyon',
+    tag: 'Otomasyon', title: 'Gaziantep Tekstil Entegrasyon',
+    loc: '160 I/O · 2022', city: 'Gaziantep', year: '2022', metric: '160 I/O Nokta',
+    desc: 'Boyahane ve dokuma hatlarının Schneider M340 tabanlı tam otomasyon entegrasyonu. Enerji tüketimi %28 azaltıldı.',
+    bullets: ['Schneider M340 PLC sistemi', 'Citect SCADA entegrasyonu', 'Inverter sürücü sistemi', '%28 enerji optimizasyonu'],
+    cat: 'otomasyon', color1: '#8B5CF6', color2: '#EC4899'
+  },
+  {
+    slug: 'samsun-liman',
+    tag: 'Endüstriyel', title: 'Samsun Liman Altyapısı',
+    loc: '34.5 kV · 2022', city: 'Samsun', year: '2022', metric: '34.5 kV',
+    desc: '34.5 kV OG besleme hattı, liman vinç güç dağıtım sistemi ve denizcilik standartlarına uygun topraklama tesisatı.',
+    bullets: ['34.5 kV OG şalt sahası', 'Vinç güç dağıtım sistemi', 'Denizcilik standartları uyumu', 'Yeraltı kablo hattı'],
+    cat: 'endustriyel', color1: '#06B6D4', color2: '#3B82F6'
+  },
+  {
+    slug: 'polatlı-ges',
+    tag: 'GES', title: 'Polatlı Çatı GES',
+    loc: '980 kWp · 2022', city: 'Ankara', year: '2022', metric: '980 kWp',
+    desc: 'Lisanssız 980 kWp çatı GES projesi. Banka finansman süreci ve YEKA başvurusu danışmanlığı dahil anahtar teslim.',
+    bullets: ['980 kWp kurulu güç', '2.200 adet panel kurulumu', 'String inverter sistemi', 'Net metering uygulaması'],
+    cat: 'yenilenebilir', color1: '#F59E0B', color2: '#EF4444'
+  },
+  {
+    slug: 'ankara-avm-aydinlatma',
+    tag: 'Aydınlatma', title: 'Ankara AVM Yenileme',
+    loc: '45.000 m² · 2022', city: 'Ankara', year: '2022', metric: '45.000 m²',
+    desc: '45.000 m² AVM\'nin komple aydınlatma yenilemesi. Facade lighting, atrium ve mağaza aydınlatması DALI protokolü ile entegre edildi.',
+    bullets: ['Dinamik LED aydınlatma', 'Facade & dekoratif sistem', 'DALI protokol kontrolü', 'Sahne ışıklandırma'],
+    cat: 'aydinlatma', color1: '#F97316', color2: '#EAB308'
+  },
+  {
+    slug: 'eskisehir-hastane',
+    tag: 'Aydınlatma', title: 'Eskişehir Hastane Kompleksi',
+    loc: '1.200 Oda · 2021', city: 'Eskişehir', year: '2021', metric: '1.200 Oda',
+    desc: 'Hastane acil, ameliyathane ve yoğun bakım aydınlatma projesi. UPS entegre güç dağıtımı ve medikal standart aydınlatma.',
+    bullets: ['Medikal standart aydınlatma', 'UPS entegre dağıtım sistemi', 'Kısılabilir LED sistem', 'Bina otomasyon entegrasyonu'],
+    cat: 'aydinlatma', color1: '#38BDF8', color2: '#818CF8'
+  }
 ];
 
 export const CLIENTS = ['ARÇINLAR', 'TEKNOSAN', 'EGE PLAS', 'AYDIN OSB', 'KARMET', 'NOVA HOLDING'];
@@ -105,5 +195,6 @@ export const NAV_LINKS = [
   { href: '/kurumsal', label: 'Kurumsal' },
   { href: '/hakkimizda', label: 'Hakkımızda' },
   { href: '/hizmetler', label: 'Hizmetler' },
+  { href: '/projeler', label: 'Projeler' },
   { href: '/iletisim', label: 'İletişim' }
 ];
