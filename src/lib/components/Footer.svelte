@@ -40,7 +40,7 @@
         <ul>
           <li><a href="tel:+903121234567">+90 312 123 45 67</a></li>
           <li><a href="mailto:info@kosekenerji.com">info@kosekenerji.com</a></li>
-          <li>OSTİM OSB · Ankara</li>
+          <li>Antalya</li>
           <li>Pzt–Cmt · 08:00–18:00</li>
         </ul>
       </div>

@@ -16,7 +16,6 @@
     { id: 'aydinlatma', label: 'Aydınlatma' }
   ];
 
-  const tileSpans = ['span-3', 'span-3', 'span-2', 'span-2', 'span-2', 'span-6'];
 </script>
 
 <svelte:head><title>Kösek Enerji — Endüstriyel Elektrik & Otomasyon</title></svelte:head>
@@ -32,7 +31,7 @@
   <div class="container hero-main">
     <div class="hero-top fade-in">
       <div class="hero-top-left">
-        <div class="eyebrow"><span class="blink"></span>SİSTEM AKTİF · ANKARA OSTİM</div>
+        <div class="eyebrow"><span class="blink"></span>SİSTEM AKTİF · ANTALYA</div>
         <div class="hero-id">REF · KSK-2026 / 0428 · LIVE</div>
       </div>
       <div class="hero-voltage">
@@ -73,15 +72,6 @@
   </div>
 </div>
 
-<section class="clients">
-  <div class="container">
-    <div class="clients-label">⚡ Anadolu'nun önde gelen sanayi kuruluşları bize güveniyor</div>
-    <div class="clients-grid">
-      {#each CLIENTS as c}<div class="client-logo">{c}</div>{/each}
-    </div>
-  </div>
-</section>
-
 <section class="services">
   <div class="container">
     <div class="section-head">
@@ -93,37 +83,30 @@
     </div>
     <div class="services-bento">
       {#each SERVICES as s, i}
-        <a href="/hizmetler" class="service-tile {tileSpans[i]}">
-          <div class="tile-num">/ {String(i + 1).padStart(2, '0')} / {String(SERVICES.length).padStart(2, '0')}</div>
-          <Icon name={s.icon} size={56}/>
+        <a href="/hizmetler" class="service-tile">
+          <div class="tile-top">
+            <div class="tile-icon"><Icon name={s.icon} size={22}/></div>
+            <span class="tile-num">{String(i + 1).padStart(2, '0')}</span>
+          </div>
           <h3>{s.title}</h3>
           <p>{s.short}</p>
-          <div class="tile-tags">
-            {#each s.tags as t}<span class="tile-tag">{t}</span>{/each}
+          <ul class="tile-list">
+            {#each s.bullets.slice(0, 3) as b}
+              <li>{b}</li>
+            {/each}
+          </ul>
+          <div class="tile-bottom">
+            <div class="tile-tags">
+              {#each s.tags as t}<span class="tile-tag">{t}</span>{/each}
+            </div>
+            <span class="tile-cta">Detaylar <Icon name="Arrow" size={13}/></span>
           </div>
-          <span class="tile-arrow"><Icon name="ArrowUR" size={18}/></span>
         </a>
       {/each}
     </div>
   </div>
 </section>
 
-<section class="stats">
-  <div class="container">
-    <div class="section-head" style="margin-bottom: 50px">
-      <div>
-        <div class="eyebrow">/ 02 — RAKAMLARLA</div>
-        <h2 class="display-lg" style="max-width: 720px">SAYILARLA<br/>KÖSEK ENERJİ.</h2>
-      </div>
-    </div>
-    <div class="stats-grid">
-      <div class="stat"><div class="stat-num"><Counter to={24} suffix="+"/></div><div class="stat-label">YIL TECRÜBE</div><div class="stat-desc">2001'den bu yana kesintisiz hizmet</div></div>
-      <div class="stat"><div class="stat-num"><Counter to={340}/></div><div class="stat-label">TAMAMLANAN PROJE</div><div class="stat-desc">7 bölge, 41 il, 6 ülke</div></div>
-      <div class="stat"><div class="stat-num"><Counter to={185} suffix=" MW"/></div><div class="stat-label">KURULU GES</div><div class="stat-desc">Lisanssız & lisanslı toplam</div></div>
-      <div class="stat"><div class="stat-num"><Counter to={48}/></div><div class="stat-label">MÜHENDİS KADRO</div><div class="stat-desc">EMO sertifikalı uzman ekip</div></div>
-    </div>
-  </div>
-</section>
 
 <section>
   <div class="container">
@@ -133,12 +116,18 @@
         <h2 class="display-lg">PROJEYİ NASIL<br/>HAYATA GEÇİRİYORUZ?</h2>
       </div>
     </div>
-    <div class="process-list">
+    <div class="process-grid">
       {#each PROCESS_STEPS as p, i}
-        <div class="process-step">
-          <div class="process-num">{String(i + 1).padStart(2, '0')}</div>
-          <div class="process-title">{p.t}</div>
-          <div class="process-desc">{p.d}</div>
+        <div class="process-card">
+          <div class="process-card-top">
+            <span class="process-step-num">{String(i + 1).padStart(2, '0')}</span>
+            {#if i % 3 !== 2}
+              <span class="process-connector" aria-hidden="true"></span>
+            {/if}
+          </div>
+          <div class="process-card-line"></div>
+          <h4 class="process-card-title">{p.t}</h4>
+          <p class="process-card-desc">{p.d}</p>
         </div>
       {/each}
     </div>
@@ -189,27 +178,13 @@
   </div>
 </section>
 
-<section class="testimonials">
+
+
+<section class="clients">
   <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">/ 05 — REFERANSLAR</div>
-        <h2 class="display-lg">MÜŞTERİLERİMİZ<br/>NE DİYOR?</h2>
-      </div>
-    </div>
-    <div class="testi-grid">
-      {#each TESTIMONIALS as t}
-        <div class="testi-card">
-          <p class="quote">{t.q}</p>
-          <div class="testi-author">
-            <div class="testi-avatar">{t.n[0]}</div>
-            <div>
-              <div class="testi-name">{t.n}</div>
-              <div class="testi-role">{t.r}</div>
-            </div>
-          </div>
-        </div>
-      {/each}
+    <div class="clients-label">⚡ Anadolu'nun önde gelen sanayi kuruluşları bize güveniyor</div>
+    <div class="clients-grid">
+      {#each CLIENTS as c}<div class="client-logo">{c}</div>{/each}
     </div>
   </div>
 </section>

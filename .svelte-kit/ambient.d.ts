@@ -90,6 +90,7 @@ declare module '$env/static/private' {
 	export const npm_package_scripts_build: string;
 	export const npm_config_version_commit_hooks: string;
 	export const npm_config_npm_version: string;
+	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const XPC_FLAGS: string;
 	export const npm_config_bin_links: string;
 	export const npm_config_node_gyp: string;
@@ -100,6 +101,7 @@ declare module '$env/static/private' {
 	export const SHLVL: string;
 	export const HOME: string;
 	export const npm_package_type: string;
+	export const VSCODE_GIT_ASKPASS_MAIN: string;
 	export const npm_config_save_prefix: string;
 	export const npm_config_strict_ssl: string;
 	export const npm_config_version_git_message: string;
@@ -107,9 +109,12 @@ declare module '$env/static/private' {
 	export const LOGNAME: string;
 	export const YARN_WRAP_OUTPUT: string;
 	export const npm_lifecycle_script: string;
+	export const VSCODE_GIT_IPC_HANDLE: string;
 	export const npm_config_user_agent: string;
 	export const npm_config_version_git_sign: string;
 	export const npm_config_ignore_scripts: string;
+	export const VSCODE_GIT_ASKPASS_NODE: string;
+	export const GIT_ASKPASS: string;
 	export const npm_config_init_version: string;
 	export const npm_config_ignore_optional: string;
 	export const npm_node_execpath: string;
@@ -255,6 +260,7 @@ declare module '$env/dynamic/private' {
 		npm_package_scripts_build: string;
 		npm_config_version_commit_hooks: string;
 		npm_config_npm_version: string;
+		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		XPC_FLAGS: string;
 		npm_config_bin_links: string;
 		npm_config_node_gyp: string;
@@ -265,6 +271,7 @@ declare module '$env/dynamic/private' {
 		SHLVL: string;
 		HOME: string;
 		npm_package_type: string;
+		VSCODE_GIT_ASKPASS_MAIN: string;
 		npm_config_save_prefix: string;
 		npm_config_strict_ssl: string;
 		npm_config_version_git_message: string;
@@ -272,9 +279,12 @@ declare module '$env/dynamic/private' {
 		LOGNAME: string;
 		YARN_WRAP_OUTPUT: string;
 		npm_lifecycle_script: string;
+		VSCODE_GIT_IPC_HANDLE: string;
 		npm_config_user_agent: string;
 		npm_config_version_git_sign: string;
 		npm_config_ignore_scripts: string;
+		VSCODE_GIT_ASKPASS_NODE: string;
+		GIT_ASKPASS: string;
 		npm_config_init_version: string;
 		npm_config_ignore_optional: string;
 		npm_node_execpath: string;

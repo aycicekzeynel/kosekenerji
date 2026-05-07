@@ -10,7 +10,6 @@
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>
   <div class="container" style="position: relative; z-index: 2">
-    <div class="breadcrumb">Anasayfa <span>›</span> Kurumsal</div>
     <h1 class="display-xl">MÜHENDİSLİĞİN<br/><span style="color: var(--accent)">GÜCÜNE</span> İNANIYORUZ.</h1>
     <p class="lead">2001'den bu yana endüstriyel elektrik tesisat ve enerji çözümlerinde Türkiye sanayisinin güvenilir ortağıyız. Anadolu'da kurduk, Anadolu'nun büyümesiyle büyüdük.</p>
   </div>
