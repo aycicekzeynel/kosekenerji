@@ -1,17 +1,44 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
+  import SEO from '$lib/components/SEO.svelte';
   import { VALUES } from '$lib/data.js';
 
   const certs = ['ISO 9001:2015 Kalite','ISO 14001 Çevre','ISO 45001 İSG','TEDAŞ Onaylı Müteahhit','EMO SMM Yetki','CE / TSE Pano','OHSAS 18001 İSG','Yapı Müteahhidi'];
+
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kösek Enerji Mühendislik ve Elektrik Hizmetleri Sanayi Ticaret Limited Şirketi",
+    "alternateName": "Kösek Enerji",
+    "url": "https://www.kosekenerji.com",
+    "foundingDate": "2001",
+    "numberOfEmployees": { "@type": "QuantitativeValue", "value": 48 },
+    "taxID": "5881221574",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cumhuriyet Mah. Fatih Cad. Kılınç Apt. No:45 İç Kapı No:B",
+      "addressLocality": "Muratpaşa",
+      "addressRegion": "Antalya",
+      "postalCode": "07040",
+      "addressCountry": "TR"
+    },
+    "hasCredential": ["EMO Serbest Müşavirlik", "TEDAŞ Onaylı Müteahhit", "ISO 9001:2015", "ISO 14001", "ISO 45001"]
+  };
 </script>
 
-<svelte:head><title>Kurumsal — Kösek Enerji</title></svelte:head>
+<SEO
+  title="Kurumsal — Antalya Elektrik Mühendislik Şirketi | Kösek Enerji"
+  description="2001 yılında kurulan Kösek Enerji, Antalya merkezli EMO ve TEDAŞ onaylı elektrik mühendislik şirketidir. ISO 9001:2015 sertifikalı, 48 uzman personel, 340+ tamamlanan proje."
+  keywords="Kösek Enerji kurumsal, Antalya elektrik şirketi, EMO onaylı elektrik Antalya, TEDAŞ onaylı müteahhit Antalya, ISO 9001 elektrik firması, elektrik mühendislik şirketi Antalya"
+  canonical="/kurumsal"
+  schema={orgSchema}
+/>
 
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>
   <div class="container" style="position: relative; z-index: 2">
     <h1 class="display-xl">MÜHENDİSLİĞİN<br/><span style="color: var(--accent)">GÜCÜNE</span> İNANIYORUZ.</h1>
-    <p class="lead">2001'den bu yana endüstriyel elektrik tesisat ve enerji çözümlerinde Türkiye sanayisinin güvenilir ortağıyız. Anadolu'da kurduk, Anadolu'nun büyümesiyle büyüdük.</p>
+    <p class="lead">2001'den bu yana endüstriyel elektrik tesisat ve enerji çözümlerinde Antalya sanayisinin güvenilir ortağıyız. Antalya'da kurduk, Antalya'nın büyümesiyle büyüdük.</p>
   </div>
 </section>
 

@@ -93,10 +93,6 @@
   0%   { opacity: 0; transform: translateY(24px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-@keyframes scrollLine {
-  0%, 100% { transform: scaleY(1); transform-origin: top; }
-  50%       { transform: scaleY(0.4); transform-origin: top; }
-}
 @keyframes neonPulse {
   from { filter: drop-shadow(0 0 4px rgba(255,212,0,0.3)) drop-shadow(0 0 14px rgba(255,212,0,0.18)) drop-shadow(0 0 40px rgba(255,212,0,0.07)); }
   to   { filter: drop-shadow(0 0 8px rgba(255,212,0,0.45)) drop-shadow(0 0 28px rgba(255,212,0,0.28)) drop-shadow(0 0 70px rgba(255,212,0,0.12)); }
@@ -815,54 +811,6 @@
   @media (max-width: 960px) { .services-bento { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px) { .services-bento { grid-template-columns: 1fr; } }
 
-  .stats {
-    background: var(--bg-deep);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .stats::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(circle at 20% 50%, rgba(255, 212, 0, 0.06), transparent 40%),
-      radial-gradient(circle at 80% 30%, rgba(0, 229, 255, 0.04), transparent 40%);
-    pointer-events: none;
-  }
-  .stats > .container { position: relative; }
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--line);
-    border-left: 1px solid var(--line);
-  }
-  @media (max-width: 800px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
-  .stat { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 40px 32px; position: relative; }
-  .stat::before {
-    content: "+";
-    position: absolute;
-    top: 12px; right: 16px;
-    font-family: var(--font-mono);
-    color: var(--text-muted);
-    font-size: 12px;
-  }
-  .stat .stat-num {
-    font-family: var(--font-display);
-    font-size: clamp(64px, 8vw, 110px);
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    line-height: 1;
-    color: var(--accent);
-    text-shadow: 0 0 30px var(--accent-glow);
-  }
-  .stat .stat-suffix { color: var(--text); font-size: 0.5em; vertical-align: super; }
-  .stat .stat-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); margin-top: 18px; }
-  .stat .stat-desc { font-size: 13px; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
-
   .process-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1119,14 +1067,6 @@
   .kv-card h3 { font-family: var(--font-display-alt); font-size: 22px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.01em; }
   .kv-card p { color: var(--text-dim); font-size: 14.5px; line-height: 1.6; }
 
-  .timeline { position: relative; padding-left: 40px; margin-top: 40px; }
-  .timeline::before { content: ""; position: absolute; left: 0; top: 16px; bottom: 16px; width: 1px; background: linear-gradient(180deg, var(--accent), var(--line)); }
-  .timeline-item { position: relative; padding-bottom: 40px; }
-  .timeline-item::before { content: ""; position: absolute; left: -45px; top: 4px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); box-shadow: 0 0 12px var(--accent-glow); }
-  .timeline-year { font-family: var(--font-display); font-size: 32px; color: var(--accent); letter-spacing: 0; line-height: 1; margin-bottom: 8px; }
-  .timeline-item h4 { font-family: var(--font-display-alt); font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-  .timeline-item p { color: var(--text-dim); font-size: 15px; line-height: 1.6; max-width: 560px; }
-
   .service-detail { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; padding: 48px 0; border-bottom: 1px solid var(--line); align-items: start; transition: padding-left 0.3s ease; }
   .service-detail:hover { padding-left: 24px; }
   .service-detail:first-of-type { border-top: 1px solid var(--line); }
@@ -1142,38 +1082,9 @@
   .service-detail-right li { font-size: 14.5px; color: var(--text); padding-left: 28px; position: relative; }
   .service-detail-right li::before { content: "▸"; position: absolute; left: 0; top: 0; color: var(--accent); font-size: 12px; }
 
-  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; margin-top: 60px; }
-  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
-  .contact-info { display: flex; flex-direction: column; gap: 16px; }
-  .contact-info-card { padding: 24px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--bg-card); display: flex; gap: 18px; align-items: start; transition: border-color 0.2s ease; }
-  .contact-info-card:hover { border-color: var(--accent); }
-  .contact-info-card .ic { width: 44px; height: 44px; background: rgba(255, 212, 0, 0.1); color: var(--accent); border-radius: var(--r-sm); display: grid; place-items: center; flex-shrink: 0; }
-  .contact-info-card .label { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--text-muted); margin-bottom: 6px; }
-  .contact-info-card .val { font-size: 15px; font-weight: 500; line-height: 1.45; }
-  .contact-info-card .val a:hover { color: var(--accent); }
-  .contact-form { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 36px; position: relative; overflow: hidden; }
-  .contact-form::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent), transparent); }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
-  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
-  .form-group { display: flex; flex-direction: column; gap: 6px; }
-  .form-group label { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); }
-  .form-group input, .form-group textarea, .form-group select { padding: 14px 16px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-sm); color: var(--text); font-family: var(--font-body); font-size: 15px; transition: border-color 0.2s ease, background 0.2s ease; }
-  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--accent); background: var(--bg-deep); box-shadow: 0 0 0 3px var(--accent-glow); }
-  .form-group textarea { resize: vertical; min-height: 120px; }
-  .form-group .err { font-size: 12px; color: var(--danger); margin-top: 2px; min-height: 14px; }
-  .form-submit { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; gap: 16px; flex-wrap: wrap; }
-  .form-note { font-size: 13px; color: var(--text-muted); font-family: var(--font-mono); }
-  .form-success { background: rgba(74, 222, 128, 0.08); border: 1px solid rgba(74, 222, 128, 0.3); color: var(--success); padding: 14px 18px; border-radius: var(--r-sm); font-size: 14px; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
-  .map-frame { margin-top: 60px; height: 380px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg-card); position: relative; overflow: hidden; }
-
   .fade-in   { opacity: 1; animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
   .fade-in-2 { animation-delay: 0.08s; }
   .fade-in-3 { animation-delay: 0.18s; }
   .fade-in-4 { animation-delay: 0.28s; }
   .fade-in-5 { animation-delay: 0.38s; }
-  .page { display: none; animation: fadeInUp 0.4s ease both; }
-  .page.active { display: block; }
-
-  .scroll-hint { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; z-index: 4; }
-  .scroll-hint .l { width: 1px; height: 32px; background: linear-gradient(180deg, var(--accent), transparent); animation: scrollLine 2s ease-in-out infinite; }
 }

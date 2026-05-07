@@ -10,7 +10,7 @@ return {
 	assets: new Set([]),
 	mimeTypes: {},
 	_: {
-		client: {start:"_app/immutable/entry/start.Di-QxpRe.js",app:"_app/immutable/entry/app.BiubOEeg.js",imports:["_app/immutable/entry/start.Di-QxpRe.js","_app/immutable/chunks/BGYLOjNr.js","_app/immutable/chunks/BKbigsoe.js","_app/immutable/entry/app.BiubOEeg.js","_app/immutable/chunks/BKbigsoe.js","_app/immutable/chunks/D5efs1Ej.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.CWm5vqan.js",app:"_app/immutable/entry/app.KLaDHKGZ.js",imports:["_app/immutable/entry/start.CWm5vqan.js","_app/immutable/chunks/DBX4b_Bl.js","_app/immutable/chunks/BKbigsoe.js","_app/immutable/entry/app.KLaDHKGZ.js","_app/immutable/chunks/BKbigsoe.js","_app/immutable/chunks/_GEeXhHu.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),
@@ -66,6 +66,20 @@ return {
 				params: [],
 				page: { layouts: [0,], errors: [1,], leaf: 7 },
 				endpoint: null
+			},
+			{
+				id: "/robots.txt",
+				pattern: /^\/robots\.txt\/?$/,
+				params: [],
+				page: null,
+				endpoint: __memo(() => import('./entries/endpoints/robots.txt/_server.js'))
+			},
+			{
+				id: "/sitemap.xml",
+				pattern: /^\/sitemap\.xml\/?$/,
+				params: [],
+				page: null,
+				endpoint: __memo(() => import('./entries/endpoints/sitemap.xml/_server.js'))
 			}
 		],
 		prerendered_routes: new Set([]),

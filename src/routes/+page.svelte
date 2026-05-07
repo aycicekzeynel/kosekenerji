@@ -2,8 +2,21 @@
   import Icon from '$lib/components/Icon.svelte';
   import HeroElectric from '$lib/components/HeroElectric.svelte';
   import Ticker from '$lib/components/Ticker.svelte';
-  import Counter from '$lib/components/Counter.svelte';
+  import SEO from '$lib/components/SEO.svelte';
   import { SERVICES, PROJECTS, CLIENTS, PROCESS_STEPS, TESTIMONIALS } from '$lib/data.js';
+
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kösek Enerji",
+    "url": "https://www.kosekenerji.com",
+    "description": "Antalya merkezli endüstriyel elektrik mühendislik firması",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.kosekenerji.com/hizmetler",
+      "query-input": "required name=search_term_string"
+    }
+  };
 
   let filter = 'hepsi';
   $: filtered = filter === 'hepsi' ? PROJECTS : PROJECTS.filter(p => p.cat === filter);
@@ -18,7 +31,13 @@
 
 </script>
 
-<svelte:head><title>Kösek Enerji — Endüstriyel Elektrik & Otomasyon</title></svelte:head>
+<SEO
+  title="Kösek Enerji — Antalya Endüstriyel Elektrik & Enerji Mühendisliği"
+  description="Antalya'da 24 yıllık deneyimle yüksek gerilim tesisleri, pano imalatı, GES ve SCADA otomasyon projeleri. EMO ve TEDAŞ onaylı. Ücretsiz keşif için arayın."
+  keywords="Antalya elektrik firması, Antalya endüstriyel elektrik, yüksek gerilim Antalya, pano imalatı Antalya, GES Antalya güneş enerjisi, otomasyon SCADA Antalya, elektrik mühendislik Antalya, Antalya elektrik tesisat, Muratpaşa elektrik firması"
+  canonical="/"
+  schema={homeSchema}
+/>
 
 <section class="hero">
   <div class="hero-bg">
@@ -31,7 +50,7 @@
   <div class="container hero-main">
     <div class="hero-top fade-in">
       <div class="hero-top-left">
-        <div class="eyebrow"><span class="blink"></span>SİSTEM AKTİF · ANTALYA</div>
+        <div class="eyebrow"><span class="blink"></span>SİSTEM AKTİF · ANTALYA, TÜRKİYE</div>
         <div class="hero-id">REF · KSK-2026 / 0428 · LIVE</div>
       </div>
       <div class="hero-voltage">
@@ -51,7 +70,7 @@
 
     <div class="hero-bottom fade-in fade-in-3">
       <p class="hero-lead">
-        Yüksek gerilim tesislerinden güneş enerjisi santrallerine, pano imalatından SCADA otomasyonuna; 2001'den bu yana Anadolu sanayisinin enerjisini kuran, taşıyan ve koruyan mühendislik markası.
+        Antalya merkezli, 2001'den bu yana yüksek gerilim tesislerinden güneş enerjisi santrallerine, pano imalatından SCADA otomasyonuna — Anadolu sanayisinin enerjisini kuran, taşıyan ve koruyan EMO onaylı mühendislik firması.
       </p>
       <div class="hero-lead-cta">
         <div class="hero-cta-buttons">

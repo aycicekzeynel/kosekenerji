@@ -1,8 +1,37 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
+  import SEO from '$lib/components/SEO.svelte';
+
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Kösek Enerji İletişim",
+    "url": "https://www.kosekenerji.com/iletisim",
+    "description": "Antalya Muratpaşa'daki Kösek Enerji ofisiyle iletişime geçin",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Kösek Enerji",
+      "telephone": "+905425338047",
+      "email": "info@kosekenerji.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cumhuriyet Mah. Fatih Cad. Kılınç Apt. No:45 İç Kapı No:B",
+        "addressLocality": "Muratpaşa",
+        "addressRegion": "Antalya",
+        "postalCode": "07040",
+        "addressCountry": "TR"
+      }
+    }
+  };
 </script>
 
-<svelte:head><title>İletişim — Kösek Enerji</title></svelte:head>
+<SEO
+  title="İletişim — Antalya Elektrik Firması | Kösek Enerji"
+  description="Antalya Muratpaşa'daki ofisimizle iletişime geçin. Elektrik tesisat, GES ve otomasyon projeleri için ücretsiz keşif ve fiyat teklifi: +90 542 533 80 47."
+  keywords="Kösek Enerji iletişim, Antalya elektrik firması telefon, Muratpaşa elektrik firması, Antalya GES teklif, elektrik projesi fiyat teklifi Antalya"
+  canonical="/iletisim"
+  schema={contactSchema}
+/>
 
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>
@@ -17,7 +46,7 @@
   <div class="container">
     <div class="contact-cards">
 
-      <a href="tel:+903121234567" class="cc">
+      <a href="tel:+905425338047" class="cc">
         <div class="cc-icon"><Icon name="Phone" size={22}/></div>
         <div class="cc-body">
           <span class="cc-label">Telefon</span>
@@ -69,7 +98,7 @@
         <div class="eyebrow">/ HIZLI İLETİŞİM</div>
         <h2 class="display-lg" style="margin: 20px 0 32px">BİZE<br/>ULAŞIN.</h2>
         <div class="reach-btns">
-          <a href="tel:+903121234567" class="reach-btn reach-btn-primary">
+          <a href="tel:+905425338047" class="reach-btn reach-btn-primary">
             <Icon name="Phone" size={18}/>
             Hemen Ara
           </a>
@@ -122,11 +151,11 @@
 <div class="map-wrapper">
   <div class="map-label">
     <Icon name="Pin" size={14}/>
-    OSTİM OSB · Ankara
+    Muratpaşa · Antalya
   </div>
   <iframe
     title="Kösek Enerji Konum"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.3!2d32.7547!3d39.9748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34fde14555555%3A0x0!2zT1NUxLBNIE9TQiDhxLBha2E!5e0!3m2!1str!2str!4v1714999999999!5m2!1str!2str"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.5!2d30.6997!3d36.8944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c38f3cc0e3c7c9%3A0x1!2sMuratpa%C5%9Fa%2C+Antalya!5e0!3m2!1str!2str!4v1714999999999!5m2!1str!2str"
     width="100%"
     height="100%"
     style="border:0; filter: grayscale(0.2) contrast(1.05);"

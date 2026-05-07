@@ -3,7 +3,61 @@
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Icon from '$lib/components/Icon.svelte';
+
+  const localBusiness = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService", "ElectricalContractor"],
+    "name": "Kösek Enerji Mühendislik ve Elektrik Hizmetleri Sanayi Ticaret Limited Şirketi",
+    "alternateName": "Kösek Enerji",
+    "url": "https://www.kosekenerji.com",
+    "logo": "https://www.kosekenerji.com/favicon.svg",
+    "image": "https://www.kosekenerji.com/og-image.jpg",
+    "description": "Antalya merkezli endüstriyel elektrik tesisat, yüksek gerilim tesisleri, pano imalatı, GES ve SCADA otomasyon firması. EMO ve TEDAŞ onaylı, 24 yıllık deneyim.",
+    "telephone": "+905425338047",
+    "email": "info@kosekenerji.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cumhuriyet Mah. Fatih Cad. Kılınç Apt. No:45 İç Kapı No:B",
+      "addressLocality": "Muratpaşa",
+      "addressRegion": "Antalya",
+      "postalCode": "07040",
+      "addressCountry": "TR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 36.8969,
+      "longitude": 30.7133
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Antalya" },
+      { "@type": "City", "name": "Alanya" },
+      { "@type": "City", "name": "Manavgat" },
+      { "@type": "City", "name": "Serik" },
+      { "@type": "City", "name": "Kemer" },
+      { "@type": "City", "name": "Kaş" },
+      { "@type": "State", "name": "Antalya ili" }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "priceRange": "$$",
+    "currenciesAccepted": "TRY",
+    "paymentAccepted": "Havale, EFT, Çek",
+    "hasCredential": ["EMO Serbest Müşavirlik", "TEDAŞ Onaylı Müteahhit", "ISO 9001:2015"],
+    "sameAs": [],
+    "foundingDate": "2001",
+    "numberOfEmployees": { "@type": "QuantitativeValue", "value": 48 }
+  };
 </script>
+
+<svelte:head>
+  {@html `<script type="application/ld+json">${JSON.stringify(localBusiness)}<\/script>`}
+</svelte:head>
 
 <Nav/>
 <main>
@@ -31,16 +85,15 @@
     z-index: 999;
     display: flex;
     align-items: center;
-    gap: 10px;
     background: #25D366;
     color: #fff;
     border-radius: 100px;
-    padding: 14px 14px 14px 14px;
+    padding: 14px;
     text-decoration: none;
     font-size: 14px;
     font-weight: 700;
     box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, padding 0.25s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: hidden;
   }
   .wa-fab:hover {
@@ -59,10 +112,7 @@
     70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
     100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
   }
-  .wa-fab-label { white-space: nowrap; letter-spacing: 0.01em; }
-
   @media (max-width: 540px) {
-    .wa-fab { bottom: 20px; right: 20px; padding: 14px; border-radius: 50%; }
-    .wa-fab-label { display: none; }
+    .wa-fab { bottom: 20px; right: 20px; border-radius: 50%; }
   }
 </style>

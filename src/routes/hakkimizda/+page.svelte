@@ -1,5 +1,6 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
+  import SEO from '$lib/components/SEO.svelte';
   import { VALUES } from '$lib/data.js';
 
   const principles = [
@@ -10,15 +11,36 @@
     { t: 'Teslim etmek, tamamlamak değildir', d: 'Sistem devreye girdikten sonra periyodik bakım, 7/24 teknik destek ve garanti süreci devam eder. Sahada kalıcıyız.' },
     { t: 'Sürekli gelişim ve teknoloji takibi', d: 'Siemens, Schneider, ABB sertifikaları; IEC güncellemeleri ve endüstri 4.0 gelişmeleri ekibimiz tarafından düzenli olarak takip edilir.' },
   ];
+
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Kösek Enerji Hakkında",
+    "url": "https://www.kosekenerji.com/hakkimizda",
+    "description": "Antalya merkezli elektrik mühendislik firması Kösek Enerji'nin hikayesi, değerleri ve mühendislik kadrosu",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Kösek Enerji",
+      "foundingDate": "2001",
+      "foundingLocation": { "@type": "Place", "name": "Antalya, Türkiye" },
+      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 48 }
+    }
+  };
 </script>
 
-<svelte:head><title>Hakkımızda — Kösek Enerji</title></svelte:head>
+<SEO
+  title="Hakkımızda — 24 Yıllık Elektrik Mühendisliği | Kösek Enerji Antalya"
+  description="2001'den bu yana Antalya'da faaliyet gösteren Kösek Enerji'nin hikayesi, mühendislik değerleri ve 48 kişilik uzman kadrosu hakkında bilgi edinin."
+  keywords="Kösek Enerji hakkında, Antalya elektrik mühendislik firma, elektrik firması Antalya tarihi, EMO mühendis Antalya, TEDAŞ sertifikalı elektrik firması"
+  canonical="/hakkimizda"
+  schema={aboutSchema}
+/>
 
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>
   <div class="container" style="position: relative; z-index: 2">
     <h1 class="display-xl">BİR <span style="color: var(--accent)">ELEKTRİKÇİNİN</span><br/>ÇEYREK ASRI.</h1>
-    <p class="lead">2001 yılında Ankara'da küçük bir atölyede başlayan hikayemiz, bugün 48 mühendis ve teknisyenle Anadolu'nun dört bir yanına uzanıyor.</p>
+    <p class="lead">2001 yılında Antalya'da küçük bir atölyede başlayan hikayemiz, bugün 48 mühendis ve teknisyenle Anadolu'nun dört bir yanına uzanıyor.</p>
   </div>
 </section>
 

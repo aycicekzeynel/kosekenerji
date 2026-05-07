@@ -16,6 +16,13 @@
       "_ssr.js"
     ]
   },
+  "_SEO.js": {
+    "file": "chunks/SEO.js",
+    "name": "SEO",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
   "_data.js": {
     "file": "chunks/data.js",
     "name": "data"
@@ -112,7 +119,7 @@
       "_data.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.DyeUdJOV.css"
+      "_app/immutable/assets/_layout.CQHEg2jG.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -123,6 +130,7 @@
     "imports": [
       "_ssr.js",
       "_Icon.js",
+      "_SEO.js",
       "_data.js"
     ]
   },
@@ -134,6 +142,7 @@
     "imports": [
       "_ssr.js",
       "_Icon.js",
+      "_SEO.js",
       "_data.js"
     ],
     "css": [
@@ -148,6 +157,7 @@
     "imports": [
       "_ssr.js",
       "_Icon.js",
+      "_SEO.js",
       "_data.js"
     ],
     "css": [
@@ -161,7 +171,8 @@
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_Icon.js"
+      "_Icon.js",
+      "_SEO.js"
     ],
     "css": [
       "_app/immutable/assets/_page.DCTJQlaW.css"
@@ -175,6 +186,7 @@
     "imports": [
       "_ssr.js",
       "_Icon.js",
+      "_SEO.js",
       "_data.js"
     ]
   },
@@ -186,10 +198,23 @@
     "imports": [
       "_ssr.js",
       "_Icon.js",
+      "_SEO.js",
       "_data.js"
     ],
     "css": [
       "_app/immutable/assets/_page.Dm-2lVHI.css"
     ]
+  },
+  "src/routes/robots.txt/+server.js": {
+    "file": "entries/endpoints/robots.txt/_server.js",
+    "name": "entries/endpoints/robots.txt/_server",
+    "src": "src/routes/robots.txt/+server.js",
+    "isEntry": true
+  },
+  "src/routes/sitemap.xml/+server.js": {
+    "file": "entries/endpoints/sitemap.xml/_server.js",
+    "name": "entries/endpoints/sitemap.xml/_server",
+    "src": "src/routes/sitemap.xml/+server.js",
+    "isEntry": true
   }
 }

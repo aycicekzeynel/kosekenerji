@@ -1,17 +1,46 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
+  import SEO from '$lib/components/SEO.svelte';
   import { SERVICES } from '$lib/data.js';
 
   let active = 0;
+
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Kösek Enerji Hizmetleri",
+    "description": "Antalya'da sunulan endüstriyel elektrik mühendislik hizmetleri",
+    "itemListElement": SERVICES.map((s, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Service",
+        "name": s.title,
+        "description": s.long,
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Kösek Enerji",
+          "address": { "@type": "PostalAddress", "addressLocality": "Antalya", "addressCountry": "TR" }
+        },
+        "areaServed": "Antalya"
+      }
+    }))
+  };
 </script>
 
-<svelte:head><title>Hizmetlerimiz — Kösek Enerji</title></svelte:head>
+<SEO
+  title="Elektrik Mühendislik Hizmetleri Antalya | Kösek Enerji"
+  description="Antalya'da yüksek gerilim, pano imalatı, güneş enerjisi (GES), SCADA otomasyon ve LED aydınlatma projeleri. Anahtar teslim elektrik çözümleri. EMO ve TEDAŞ onaylı."
+  keywords="Antalya yüksek gerilim, Antalya pano imalatı, Antalya GES güneş enerjisi, Antalya SCADA otomasyon, Antalya LED aydınlatma, elektrik tesisat Antalya, trafo merkezi Antalya, endüstriyel elektrik Antalya"
+  canonical="/hizmetler"
+  schema={servicesSchema}
+/>
 
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>
   <div class="container" style="position: relative; z-index: 2">
     <h1 class="display-xl">UÇTAN UCA<br/><span style="color: var(--accent)">ELEKTRİK</span> MÜHENDİSLİĞİ.</h1>
-    <p class="lead">Tasarımdan uygulamaya, devreye almadan bakıma; tüm enerji yatırımınızı tek bir mühendislik ortağıyla yönetin.</p>
+    <p class="lead">Antalya'da tasarımdan uygulamaya, devreye almadan bakıma; tüm enerji yatırımınızı tek bir EMO onaylı mühendislik ortağıyla yönetin.</p>
   </div>
 </section>
 

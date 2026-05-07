@@ -4,7 +4,7 @@ const SERVICES = [
     icon: "Tower",
     title: "Yüksek Gerilim Tesisleri",
     short: "OG/AG şalt sahaları, trafo merkezleri ve enerji nakil hatları için anahtar teslim çözümler.",
-    long: "Orta ve yüksek gerilim sistemlerinde proje tasarımından devreye almaya kadar tüm süreçleri yönetiyoruz. TEDAŞ onaylı projeler, EMO mühendis kadromuzla.",
+    long: "Antalya ve çevre illerde orta ve yüksek gerilim sistemlerinde proje tasarımından devreye almaya kadar tüm süreçleri yönetiyoruz. TEDAŞ onaylı projeler, EMO mühendis kadromuzla.",
     bullets: ["OG/AG şalt sahaları", "Trafo merkezi kurulumu", "Enerji nakil hatları", "TEDAŞ onaylı projeler", "Topraklama tesisatı", "Koruma & röle ayarları"],
     tags: ["Endüstriyel", "Altyapı"]
   },
@@ -22,7 +22,7 @@ const SERVICES = [
     icon: "Sun",
     title: "Güneş Enerjisi Santralleri",
     short: "Çatı ve arazi GES projeleri. Fizibiliteden devreye almaya, izin süreçlerinden bakıma.",
-    long: "Lisanssız ve lisanslı GES projeleri için anahtar teslim hizmet. Ön fizibilite, mühendislik, kurulum ve 25 yıllık performans takibi.",
+    long: "Antalya'nın güneş potansiyelini değerlendirin. Lisanssız ve lisanslı GES projeleri için anahtar teslim hizmet. Ön fizibilite, mühendislik, kurulum ve 25 yıllık performans takibi.",
     bullets: ["Çatı GES", "Arazi tipi GES", "Lisanssız projeler", "EPC anahtar teslim", "Bakım & izleme", "Performans garantisi"],
     tags: ["Yenilenebilir", "Sürdürülebilir"]
   },
@@ -56,6 +56,35 @@ const SERVICES = [
 ];
 const PROJECTS = [
   {
+    slug: "antalya-osb-trafo",
+    tag: "Endüstriyel",
+    title: "Antalya OSB Trafo Merkezi",
+    loc: "6.400 kVA · 2025",
+    city: "Antalya",
+    year: "2025",
+    metric: "6.400 kVA",
+    desc: "Antalya Organize Sanayi Bölgesi'nde 4 adet 1600 kVA transformatör, OG/AG pano sistemleri ve tam TEDAŞ bağlantı projesi. Antalya'nın önde gelen sanayi tesislerine kesintisiz enerji.",
+    bullets: ["4×1600 kVA trafo kurulumu", "OG şalt sahası inşaatı", "AG dağıtım sistemi", "TEDAŞ bağlantı projesi"],
+    cat: "endustriyel",
+    color1: "#00D4FF",
+    color2: "#0066FF",
+    featured: true
+  },
+  {
+    slug: "antalya-ges-otel",
+    tag: "GES",
+    title: "Antalya Sahil Otel GES",
+    loc: "1.2 MWp · 2025",
+    city: "Antalya",
+    year: "2025",
+    metric: "1.2 MWp",
+    desc: "Antalya'nın turizm bölgesindeki büyük ölçekli otel kompleksine çatı GES kurulumu. Lisanssız proje kapsamında yıllık elektrik giderinde %55 tasarruf sağlandı.",
+    bullets: ["2.800 adet bifacial panel", "Hibrit inverter sistemi", "Otel enerji yönetim entegrasyonu", "%55 enerji maliyet tasarrufu"],
+    cat: "yenilenebilir",
+    color1: "#FFD400",
+    color2: "#FF6B00"
+  },
+  {
     slug: "konya-karatay-ges",
     tag: "GES",
     title: "Konya Karatay Çatı GES",
@@ -67,8 +96,7 @@ const PROJECTS = [
     bullets: ["5.800 adet monokristal panel", "4 merkezi inverter istasyonu", "SCADA uzaktan izleme sistemi", "25 yıl performans garantisi"],
     cat: "yenilenebilir",
     color1: "#FFD400",
-    color2: "#FF6B00",
-    featured: true
+    color2: "#FF6B00"
   },
   {
     slug: "ankara-osb-trafo",
@@ -223,9 +251,37 @@ const PROJECTS = [
     cat: "aydinlatma",
     color1: "#38BDF8",
     color2: "#818CF8"
+  },
+  {
+    slug: "antalya-soguk-hava-otomasyon",
+    tag: "Otomasyon",
+    title: "Antalya Soğuk Hava Deposu",
+    loc: "96 I/O · 2024",
+    city: "Antalya",
+    year: "2024",
+    metric: "96 I/O Nokta",
+    desc: "Antalya'daki büyük soğuk hava deposunun Siemens S7-1200 tabanlı otomasyon sistemi. Enerji izleme, sıcaklık kontrol ve uzaktan alarm entegrasyonu.",
+    bullets: ["Siemens S7-1200 PLC sistemi", "SCADA uzaktan izleme", "Enerji yönetim sistemi", "SMS/e-posta alarm altyapısı"],
+    cat: "otomasyon",
+    color1: "#A855F7",
+    color2: "#EC4899"
+  },
+  {
+    slug: "antalya-uretim-led",
+    tag: "Aydınlatma",
+    title: "Antalya Sanayi Tesisi LED",
+    loc: "18.000 m² · 2024",
+    city: "Antalya",
+    year: "2024",
+    metric: "18.000 m²",
+    desc: "Antalya OSB'deki üretim tesisinin komple LED dönüşümü. DIALux hesaplamalı tasarım ile %58 enerji tasarrufu, 5 yıl geri ödeme süresi.",
+    bullets: ["480 adet industrial LED", "DIALux hesaplamalı proje", "Hareket sensörlü kontrol", "%58 enerji tasarrufu"],
+    cat: "aydinlatma",
+    color1: "#FFD400",
+    color2: "#84CC16"
   }
 ];
-const CLIENTS = ["ARÇINLAR", "TEKNOSAN", "EGE PLAS", "AYDIN OSB", "KARMET", "NOVA HOLDING"];
+const CLIENTS = ["ANTALYA OSB", "TEKNOSAN", "EGE PLAS", "ARÇINLAR", "KARMET", "NOVA HOLDING", "AYDIN OSB", "KOSKİ"];
 const VALUES = [
   { i: "Shield", n: "01", t: "Güvenlik Önce", d: "Her sahada, her ekipte iş güvenliği protokolleri taviz vermeden uygulanır. Sıfır iş kazası hedefimizdir." },
   { i: "Bolt", n: "02", t: "Mühendislik Disiplini", d: "Her proje hesaplanır, her tasarım denetlenir, her uygulama kontrol edilir. EMO sertifikalı kadromuzla." },

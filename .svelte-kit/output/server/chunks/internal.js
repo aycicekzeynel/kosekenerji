@@ -111,7 +111,7 @@ const options = {
   service_worker_options: void 0,
   server_error_boundaries: false,
   templates: {
-    app: ({ head, body, assets, nonce, env }) => '<!doctype html>\n<html lang="tr">\n<head>\n  <meta charset="utf-8" />\n  <link rel="icon" href="' + assets + '/favicon.svg" />\n  <meta name="viewport" content="width=device-width, initial-scale=1" />\n  <link rel="preconnect" href="https://fonts.googleapis.com"/>\n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>\n  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>\n  ' + head + '\n</head>\n<body data-sveltekit-preload-data="hover">\n  <div style="display: contents">' + body + "</div>\n</body>\n</html>\n",
+    app: ({ head, body, assets, nonce, env }) => '<!doctype html>\n<html lang="tr">\n<head>\n  <meta charset="utf-8" />\n  <link rel="icon" href="' + assets + '/favicon.svg" />\n  <meta name="viewport" content="width=device-width, initial-scale=1" />\n  <meta name="theme-color" content="#02040A"/>\n  <meta name="msapplication-TileColor" content="#FFD400"/>\n  <meta name="format-detection" content="telephone=no"/>\n  <link rel="dns-prefetch" href="https://www.google.com"/>\n  <link rel="preconnect" href="https://fonts.googleapis.com"/>\n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>\n  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>\n  ' + head + '\n</head>\n<body data-sveltekit-preload-data="hover">\n  <div style="display: contents">' + body + "</div>\n</body>\n</html>\n",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -183,7 +183,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "111xgwu"
+  version_hash: "vgw6xi"
 };
 async function get_hooks() {
   let handle;

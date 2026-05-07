@@ -1,5 +1,6 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
+  import SEO from '$lib/components/SEO.svelte';
   import { PROJECTS, TESTIMONIALS } from '$lib/data.js';
 
   let filter = 'hepsi';
@@ -21,9 +22,29 @@
     if (id === 'hepsi') return PROJECTS.length;
     return PROJECTS.filter(p => p.cat === id).length;
   }
+
+  const projectsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Kösek Enerji Referans Projeleri",
+    "description": "Antalya ve Türkiye genelinde tamamlanan elektrik mühendislik projeleri",
+    "numberOfItems": PROJECTS.length,
+    "itemListElement": PROJECTS.slice(0, 8).map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.title,
+      "description": p.desc
+    }))
+  };
 </script>
 
-<svelte:head><title>Projeler — Kösek Enerji</title></svelte:head>
+<SEO
+  title="Referans Projeler — Antalya Elektrik & Enerji Projeleri | Kösek Enerji"
+  description="340+ tamamlanmış proje: Antalya GES, yüksek gerilim, SCADA otomasyon ve LED aydınlatma referansları. 185 MW kurulu güç, %97 zamanında teslimat."
+  keywords="Antalya elektrik projeleri, Antalya GES referans, Antalya trafo projesi, endüstriyel elektrik proje referansları, Antalya otomasyon projesi, Kösek Enerji referanslar"
+  canonical="/projeler"
+  schema={projectsSchema}
+/>
 
 <!-- ── HERO ── -->
 <section class="page-hero proj-hero">
@@ -36,7 +57,7 @@
       SAHADA BIRAKTIĞIMIZ<br/>
       <span style="color:var(--accent)">MÜHENDİSLİK</span> İZİ.
     </h1>
-    <p class="lead">Yüksek gerilimden güneş tarlalarına, SCADA otomasyonundan aydınlatmaya; Anadolu genelinde tamamladığımız seçilmiş projeler.</p>
+    <p class="lead">Antalya ve Türkiye genelinde yüksek gerilimden güneş santrallerine, SCADA otomasyonundan LED aydınlatmaya; tamamladığımız seçilmiş referans projeler.</p>
   </div>
   <!-- Stat strip inside hero -->
   <div class="hero-stats">

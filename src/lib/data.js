@@ -6,7 +6,7 @@ export const SERVICES = [
     icon: 'Tower',
     title: 'Yüksek Gerilim Tesisleri',
     short: 'OG/AG şalt sahaları, trafo merkezleri ve enerji nakil hatları için anahtar teslim çözümler.',
-    long: 'Orta ve yüksek gerilim sistemlerinde proje tasarımından devreye almaya kadar tüm süreçleri yönetiyoruz. TEDAŞ onaylı projeler, EMO mühendis kadromuzla.',
+    long: 'Antalya ve çevre illerde orta ve yüksek gerilim sistemlerinde proje tasarımından devreye almaya kadar tüm süreçleri yönetiyoruz. TEDAŞ onaylı projeler, EMO mühendis kadromuzla.',
     bullets: ['OG/AG şalt sahaları', 'Trafo merkezi kurulumu', 'Enerji nakil hatları', 'TEDAŞ onaylı projeler', 'Topraklama tesisatı', 'Koruma & röle ayarları'],
     tags: ['Endüstriyel', 'Altyapı']
   },
@@ -24,7 +24,7 @@ export const SERVICES = [
     icon: 'Sun',
     title: 'Güneş Enerjisi Santralleri',
     short: 'Çatı ve arazi GES projeleri. Fizibiliteden devreye almaya, izin süreçlerinden bakıma.',
-    long: 'Lisanssız ve lisanslı GES projeleri için anahtar teslim hizmet. Ön fizibilite, mühendislik, kurulum ve 25 yıllık performans takibi.',
+    long: 'Antalya\'nın güneş potansiyelini değerlendirin. Lisanssız ve lisanslı GES projeleri için anahtar teslim hizmet. Ön fizibilite, mühendislik, kurulum ve 25 yıllık performans takibi.',
     bullets: ['Çatı GES', 'Arazi tipi GES', 'Lisanssız projeler', 'EPC anahtar teslim', 'Bakım & izleme', 'Performans garantisi'],
     tags: ['Yenilenebilir', 'Sürdürülebilir']
   },
@@ -59,12 +59,28 @@ export const SERVICES = [
 
 export const PROJECTS = [
   {
+    slug: 'antalya-osb-trafo',
+    tag: 'Endüstriyel', title: 'Antalya OSB Trafo Merkezi',
+    loc: '6.400 kVA · 2025', city: 'Antalya', year: '2025', metric: '6.400 kVA',
+    desc: 'Antalya Organize Sanayi Bölgesi\'nde 4 adet 1600 kVA transformatör, OG/AG pano sistemleri ve tam TEDAŞ bağlantı projesi. Antalya\'nın önde gelen sanayi tesislerine kesintisiz enerji.',
+    bullets: ['4×1600 kVA trafo kurulumu', 'OG şalt sahası inşaatı', 'AG dağıtım sistemi', 'TEDAŞ bağlantı projesi'],
+    cat: 'endustriyel', color1: '#00D4FF', color2: '#0066FF', featured: true
+  },
+  {
+    slug: 'antalya-ges-otel',
+    tag: 'GES', title: 'Antalya Sahil Otel GES',
+    loc: '1.2 MWp · 2025', city: 'Antalya', year: '2025', metric: '1.2 MWp',
+    desc: 'Antalya\'nın turizm bölgesindeki büyük ölçekli otel kompleksine çatı GES kurulumu. Lisanssız proje kapsamında yıllık elektrik giderinde %55 tasarruf sağlandı.',
+    bullets: ['2.800 adet bifacial panel', 'Hibrit inverter sistemi', 'Otel enerji yönetim entegrasyonu', '%55 enerji maliyet tasarrufu'],
+    cat: 'yenilenebilir', color1: '#FFD400', color2: '#FF6B00'
+  },
+  {
     slug: 'konya-karatay-ges',
     tag: 'GES', title: 'Konya Karatay Çatı GES',
     loc: '2.4 MWp · 2025', city: 'Konya', year: '2025', metric: '2.4 MWp',
     desc: 'Konya\'nın en büyük çatı GES projelerinden biri. 5.800 panel, 4 inverter istasyonu ve merkezi SCADA izleme sistemi ile devreye alındı. İlk yıl üretim hedefi %112 ile aşıldı.',
     bullets: ['5.800 adet monokristal panel', '4 merkezi inverter istasyonu', 'SCADA uzaktan izleme sistemi', '25 yıl performans garantisi'],
-    cat: 'yenilenebilir', color1: '#FFD400', color2: '#FF6B00', featured: true
+    cat: 'yenilenebilir', color1: '#FFD400', color2: '#FF6B00'
   },
   {
     slug: 'ankara-osb-trafo',
@@ -153,10 +169,26 @@ export const PROJECTS = [
     desc: 'Hastane acil, ameliyathane ve yoğun bakım aydınlatma projesi. UPS entegre güç dağıtımı ve medikal standart aydınlatma.',
     bullets: ['Medikal standart aydınlatma', 'UPS entegre dağıtım sistemi', 'Kısılabilir LED sistem', 'Bina otomasyon entegrasyonu'],
     cat: 'aydinlatma', color1: '#38BDF8', color2: '#818CF8'
+  },
+  {
+    slug: 'antalya-soguk-hava-otomasyon',
+    tag: 'Otomasyon', title: 'Antalya Soğuk Hava Deposu',
+    loc: '96 I/O · 2024', city: 'Antalya', year: '2024', metric: '96 I/O Nokta',
+    desc: 'Antalya\'daki büyük soğuk hava deposunun Siemens S7-1200 tabanlı otomasyon sistemi. Enerji izleme, sıcaklık kontrol ve uzaktan alarm entegrasyonu.',
+    bullets: ['Siemens S7-1200 PLC sistemi', 'SCADA uzaktan izleme', 'Enerji yönetim sistemi', 'SMS/e-posta alarm altyapısı'],
+    cat: 'otomasyon', color1: '#A855F7', color2: '#EC4899'
+  },
+  {
+    slug: 'antalya-uretim-led',
+    tag: 'Aydınlatma', title: 'Antalya Sanayi Tesisi LED',
+    loc: '18.000 m² · 2024', city: 'Antalya', year: '2024', metric: '18.000 m²',
+    desc: 'Antalya OSB\'deki üretim tesisinin komple LED dönüşümü. DIALux hesaplamalı tasarım ile %58 enerji tasarrufu, 5 yıl geri ödeme süresi.',
+    bullets: ['480 adet industrial LED', 'DIALux hesaplamalı proje', 'Hareket sensörlü kontrol', '%58 enerji tasarrufu'],
+    cat: 'aydinlatma', color1: '#FFD400', color2: '#84CC16'
   }
 ];
 
-export const CLIENTS = ['ARÇINLAR', 'TEKNOSAN', 'EGE PLAS', 'AYDIN OSB', 'KARMET', 'NOVA HOLDING'];
+export const CLIENTS = ['ANTALYA OSB', 'TEKNOSAN', 'EGE PLAS', 'ARÇINLAR', 'KARMET', 'NOVA HOLDING', 'AYDIN OSB', 'KOSKİ'];
 
 export const VALUES = [
   { i: 'Shield', n: '01', t: 'Güvenlik Önce', d: 'Her sahada, her ekipte iş güvenliği protokolleri taviz vermeden uygulanır. Sıfır iş kazası hedefimizdir.' },
@@ -165,15 +197,6 @@ export const VALUES = [
   { i: 'Wrench', n: '04', t: 'Sürekli Destek', d: 'Devreye alma bizim için bitiş değil, başlangıç. Bakım ve servis ekibimiz 7/24 yanınızda.' },
   { i: 'Cpu', n: '05', t: 'Teknolojiye Açıklık', d: 'PLC, SCADA, IoT, dijital ikiz... Her yeni teknolojiyi öğrenir, sahada uygulanabilir hale getiririz.' },
   { i: 'Sun', n: '06', t: 'Sürdürülebilirlik', d: 'Yenilenebilir enerji, verimlilik ve LED dönüşüm projelerimizle düşük karbonlu geleceğin parçasıyız.' }
-];
-
-export const TIMELINE = [
-  { y: '2001', t: 'Kuruluş', d: 'Kurucumuz İbrahim Kösek tarafından OSTİM\'de küçük bir elektrik tesisat atölyesi olarak kuruldu.' },
-  { y: '2007', t: 'Pano İmalat Atölyesi', d: 'Kendi pano imalat tesisimiz devreye alındı. İlk yıl 120 panoluk üretim kapasitesine ulaşıldı.' },
-  { y: '2012', t: 'OG/AG Yetki Belgeleri', d: 'TEDAŞ ve EMO onaylı OG/AG müteahhitlik yetkileri alındı. Trafo merkezi projelerine başlandı.' },
-  { y: '2017', t: 'GES Departmanı', d: 'Yenilenebilir enerji bölümü kuruldu. İlk lisanssız çatı GES projesi (480 kWp) tamamlandı.' },
-  { y: '2021', t: 'Otomasyon & SCADA', d: 'Endüstri 4.0 odaklı otomasyon ekibi kuruldu. Siemens ve Schneider sertifikalı çözüm ortağı olduk.' },
-  { y: '2024', t: '340. Proje', d: 'Bursa Otomotiv Tesisi ile 340. projemizi tamamladık. Toplam kurulu GES gücümüz 185 MW\'ı aştı.' }
 ];
 
 export const PROCESS_STEPS = [
