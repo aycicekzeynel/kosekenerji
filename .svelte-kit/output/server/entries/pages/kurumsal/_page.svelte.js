@@ -1,18 +1,9 @@
-import { c as create_ssr_component, v as validate_component, e as each, f as escape } from "../../../chunks/ssr.js";
-import { I as Icon } from "../../../chunks/Icon.js";
+import { c as create_ssr_component, a as subscribe, v as validate_component, d as escape, e as each } from "../../../chunks/ssr.js";
+import { t, I as Icon } from "../../../chunks/index2.js";
 import { S as SEO } from "../../../chunks/SEO.js";
-import { V as VALUES } from "../../../chunks/data.js";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  const certs = [
-    "ISO 9001:2015 Kalite",
-    "ISO 14001 Çevre",
-    "ISO 45001 İSG",
-    "TEDAŞ Onaylı Müteahhit",
-    "EMO SMM Yetki",
-    "CE / TSE Pano",
-    "OHSAS 18001 İSG",
-    "Yapı Müteahhidi"
-  ];
+  let $t, $$unsubscribe_t;
+  $$unsubscribe_t = subscribe(t, (value) => $t = value);
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -41,6 +32,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       "ISO 45001"
     ]
   };
+  $$unsubscribe_t();
   return `${validate_component(SEO, "SEO").$$render(
     $$result,
     {
@@ -52,9 +44,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     },
     {},
     {}
-  )} <section class="page-hero" data-svelte-h="svelte-h8o31v"><div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div> <div class="container" style="position: relative; z-index: 2"><h1 class="display-xl">MÜHENDİSLİĞİN<br><span style="color: var(--accent)">GÜCÜNE</span> İNANIYORUZ.</h1> <p class="lead">2001&#39;den bu yana endüstriyel elektrik tesisat ve enerji çözümlerinde Antalya sanayisinin güvenilir ortağıyız. Antalya&#39;da kurduk, Antalya&#39;nın büyümesiyle büyüdük.</p></div></section> <section style="padding-top: 0"><div class="container"><div class="section-head" data-svelte-h="svelte-1atbuft"><div><div class="eyebrow">/ DEĞERLER</div> <h2 class="display-md">Bizi biz yapan ilkeler.</h2></div></div> <div class="kv-grid">${each(VALUES, (v) => {
+  )} <section class="page-hero"><div class="hero-bg" data-svelte-h="svelte-1xp5dsq"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div> <div class="container" style="position: relative; z-index: 2"><h1 class="display-xl"><!-- HTML_TAG_START -->${$t("pages.corporate.heroTitle")}<!-- HTML_TAG_END --></h1> <p class="lead">${escape($t("pages.corporate.heroLead"))}</p></div></section> <section style="padding-top: 0"><div class="container"><div class="section-head"><div><div class="eyebrow">${escape($t("pages.corporate.valuesEyebrow"))}</div> <h2 class="display-md">${escape($t("pages.corporate.valuesTitle"))}</h2></div></div> <div class="kv-grid">${each($t("data.values"), (v) => {
     return `<div class="kv-card"><div class="kv-num">${escape(v.n)}</div> <span class="kv-icon">${validate_component(Icon, "Icon").$$render($$result, { name: v.i, size: 48 }, {}, {})}</span> <h3>${escape(v.t)}</h3> <p>${escape(v.d)}</p> </div>`;
-  })}</div></div></section> <section style="background: var(--bg-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line)"><div class="container"><div class="section-head" data-svelte-h="svelte-1ox69p3"><div><div class="eyebrow">/ SERTİFİKALAR</div> <h2 class="display-md">Sektörel onay ve standartlar.</h2></div></div> <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">${each(certs, (c) => {
+  })}</div></div></section> <section style="background: var(--bg-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line)"><div class="container"><div class="section-head"><div><div class="eyebrow">${escape($t("pages.corporate.certsEyebrow"))}</div> <h2 class="display-md">${escape($t("pages.corporate.certsTitle"))}</h2></div></div> <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">${each($t("pages.corporate.certs"), (c) => {
     return `<div style="padding: 22px 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg-card); display: flex; align-items: center; gap: 14px"><span style="color: var(--accent); flex-shrink: 0; display: flex">${validate_component(Icon, "Icon").$$render($$result, { name: "Check", size: 18 }, {}, {})}</span> <span style="font-size: 14px; font-weight: 500">${escape(c)}</span> </div>`;
   })}</div></div></section>`;
 });

@@ -1,16 +1,7 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
   import SEO from '$lib/components/SEO.svelte';
-  import { VALUES } from '$lib/data.js';
-
-  const principles = [
-    { t: 'Hesaplamasız iş yapmıyoruz', d: 'Her tesisat, her pano, her proje detaylı mühendislik hesabı ve teknik çizimle desteklenir. Varsayıma göre değil, ölçüme göre çalışırız.' },
-    { t: 'Güvenlik pazarlık konusu değildir', d: 'Sahada iş güvenliği protokollerine uyum mutlaktır. Baskı, takvim ya da maliyet hiçbir zaman güvenliğin önüne geçemez.' },
-    { t: 'Şeffaf süreç, tam raporlama', d: 'Projenizin her aşaması belgelenir, onaylanır ve müşteriye sunulur. Sürpriz maliyet ya da gizli kalem yoktur.' },
-    { t: 'Standartlar tavan değil, zemin', d: 'TS EN, IEC ve TEDAŞ yönetmeliklerini minimum gereksinim değil, başlangıç noktası olarak kabul ederiz.' },
-    { t: 'Teslim etmek, tamamlamak değildir', d: 'Sistem devreye girdikten sonra periyodik bakım, 7/24 teknik destek ve garanti süreci devam eder. Sahada kalıcıyız.' },
-    { t: 'Sürekli gelişim ve teknoloji takibi', d: 'Siemens, Schneider, ABB sertifikaları; IEC güncellemeleri ve endüstri 4.0 gelişmeleri ekibimiz tarafından düzenli olarak takip edilir.' },
-  ];
+  import { t } from '$lib/i18n/index.js';
 
   const aboutSchema = {
     "@context": "https://schema.org",
@@ -39,26 +30,26 @@
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>
   <div class="container" style="position: relative; z-index: 2">
-    <h1 class="display-xl">BİR <span style="color: var(--accent)">ELEKTRİKÇİNİN</span><br/>ÇEYREK ASRI.</h1>
-    <p class="lead">2001 yılında Antalya'da küçük bir atölyede başlayan hikayemiz, bugün 48 mühendis ve teknisyenle Anadolu'nun dört bir yanına uzanıyor.</p>
+    <h1 class="display-xl">{@html $t('pages.about.heroTitle')}</h1>
+    <p class="lead">{$t('pages.about.heroLead')}</p>
   </div>
 </section>
 
 <section class="mv-section">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">/ MİSYON & VİZYON</div>
+      <div class="eyebrow">{$t('pages.about.mvEyebrow')}</div>
     </div>
     <div class="mv-grid">
       <div class="mv-card">
         <span class="mv-icon"><Icon name="Bolt" size={36}/></span>
-        <h3 class="display-md">Misyonumuz</h3>
-        <p>Türk sanayisinin enerjisini güvenle, kesintisiz ve sürdürülebilir şekilde taşımak. Her projede mühendislik kalitesini, müşteri memnuniyetini ve iş güvenliğini en üst seviyede tutmak.</p>
+        <h3 class="display-md">{$t('pages.about.missionTitle')}</h3>
+        <p>{$t('pages.about.missionText')}</p>
       </div>
       <div class="mv-card mv-accent">
         <span class="mv-icon"><Icon name="Sun" size={36}/></span>
-        <h3 class="display-md">Vizyonumuz</h3>
-        <p>2030'a kadar Türkiye'nin yenilenebilir enerji ve endüstriyel otomasyon alanında ilk akla gelen mühendislik markası olmak. 1 GW kurulu GES gücüne ulaşmak.</p>
+        <h3 class="display-md">{$t('pages.about.visionTitle')}</h3>
+        <p>{$t('pages.about.visionText')}</p>
       </div>
     </div>
   </div>
@@ -68,12 +59,12 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="eyebrow">/ BAŞARIMIZIN TEMELLERİ</div>
-        <h2 class="display-lg">BİZİ BİZ YAPAN<br/>DEĞERLER.</h2>
+        <div class="eyebrow">{$t('pages.about.valuesEyebrow')}</div>
+        <h2 class="display-lg">{@html $t('pages.about.valuesTitle')}</h2>
       </div>
     </div>
     <div class="values-grid">
-      {#each VALUES as v}
+      {#each $t('data.values') as v}
         <div class="value-card">
           <div class="value-top">
             <span class="value-n">{v.n}</span>
@@ -91,13 +82,13 @@
   <div class="container">
     <div class="principles-head">
       <div>
-        <div class="eyebrow">/ ÇALIŞMA PRENSİPLERİMİZ</div>
-        <h2 class="display-lg">NASIL<br/>ÇALIŞIYORUZ?</h2>
+        <div class="eyebrow">{$t('pages.about.principlesEyebrow')}</div>
+        <h2 class="display-lg">{@html $t('pages.about.principlesTitle')}</h2>
       </div>
-      <p class="principles-sub">Her projede, istisnasız uygulanan temel prensiplerimiz.</p>
+      <p class="principles-sub">{$t('pages.about.principlesSub')}</p>
     </div>
     <div class="principles-cards">
-      {#each principles as p, i}
+      {#each $t('pages.about.principles') as p, i}
         <div class="pc">
           <span class="pc-num">{String(i + 1).padStart(2, '0')}</span>
           <h4 class="pc-title">{p.t}</h4>

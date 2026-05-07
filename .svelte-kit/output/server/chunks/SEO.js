@@ -1,4 +1,4 @@
-import { c as create_ssr_component, f as escape, d as add_attribute } from "./ssr.js";
+import { c as create_ssr_component, d as escape, b as add_attribute } from "./ssr.js";
 const SITE = "https://www.kosekenerji.com";
 const SEO = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let canonicalUrl;

@@ -9,13 +9,6 @@
       "_environment.js"
     ]
   },
-  "_Icon.js": {
-    "file": "chunks/Icon.js",
-    "name": "Icon",
-    "imports": [
-      "_ssr.js"
-    ]
-  },
   "_SEO.js": {
     "file": "chunks/SEO.js",
     "name": "SEO",
@@ -34,6 +27,21 @@
   "_exports.js": {
     "file": "chunks/exports.js",
     "name": "exports"
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "name": "index",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "name": "index",
+    "imports": [
+      "_ssr.js",
+      "_index.js"
+    ]
   },
   "_internal.js": {
     "file": "chunks/internal.js",
@@ -103,7 +111,7 @@
       "_environment.js",
       "_exports.js",
       "_utils.js",
-      "_ssr.js",
+      "_index.js",
       "_internal.js"
     ]
   },
@@ -115,11 +123,11 @@
     "imports": [
       "_ssr.js",
       "_stores.js",
-      "_Icon.js",
+      "_index2.js",
       "_data.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.CQHEg2jG.css"
+      "_app/immutable/assets/_layout.D3wJApO9.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -129,7 +137,7 @@
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_Icon.js",
+      "_index2.js",
       "_SEO.js",
       "_data.js"
     ]
@@ -141,9 +149,8 @@
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_Icon.js",
-      "_SEO.js",
-      "_data.js"
+      "_index2.js",
+      "_SEO.js"
     ],
     "css": [
       "_app/immutable/assets/_page.BOQVUNMD.css"
@@ -156,7 +163,7 @@
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_Icon.js",
+      "_index2.js",
       "_SEO.js",
       "_data.js"
     ],
@@ -171,7 +178,7 @@
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_Icon.js",
+      "_index2.js",
       "_SEO.js"
     ],
     "css": [
@@ -185,9 +192,8 @@
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_Icon.js",
-      "_SEO.js",
-      "_data.js"
+      "_index2.js",
+      "_SEO.js"
     ]
   },
   "src/routes/projeler/+page.svelte": {
@@ -197,7 +203,7 @@
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_Icon.js",
+      "_index2.js",
       "_SEO.js",
       "_data.js"
     ],

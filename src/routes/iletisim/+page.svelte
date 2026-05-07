@@ -1,6 +1,7 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
   import SEO from '$lib/components/SEO.svelte';
+  import { t } from '$lib/i18n/index.js';
 
   const contactSchema = {
     "@context": "https://schema.org",
@@ -36,8 +37,8 @@
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>
   <div class="container" style="position: relative; z-index: 2">
-    <h1 class="display-xl"><span style="color: var(--accent)">KONUŞALIM.</span><br/>PROJENİZİ DEĞERLENDİRELİM.</h1>
-    <p class="lead">Keşif, fizibilite ve fiyat teklifi tamamen ücretsiz. Direkt arayın veya yazın — 24 saat içinde dönüş yapıyoruz.</p>
+    <h1 class="display-xl"><span style="color: var(--accent)">{@html $t('pages.contact.heroTitle')}</span></h1>
+    <p class="lead">{$t('pages.contact.heroLead')}</p>
   </div>
 </section>
 
@@ -49,7 +50,7 @@
       <a href="tel:+905425338047" class="cc">
         <div class="cc-icon"><Icon name="Phone" size={22}/></div>
         <div class="cc-body">
-          <span class="cc-label">Telefon</span>
+          <span class="cc-label">{$t('pages.contact.phoneLbl')}</span>
           <span class="cc-main">+90 542 533 80 47</span>
           
         </div>
@@ -59,9 +60,9 @@
       <a href="https://wa.me/905425338047" target="_blank" rel="noopener noreferrer" class="cc cc-wa">
         <div class="cc-icon cc-icon-wa"><Icon name="WhatsApp" size={22}/></div>
         <div class="cc-body">
-          <span class="cc-label">WhatsApp</span>
+          <span class="cc-label">{$t('pages.contact.whatsappLbl')}</span>
           <span class="cc-main">+90 542 533 80 47</span>
-          <span class="cc-sub">Hızlı mesaj · 7/24</span>
+          <span class="cc-sub">{$t('pages.contact.waSub')}</span>
         </div>
         <span class="cc-arrow"><Icon name="ArrowUR" size={14}/></span>
       </a>
@@ -69,7 +70,7 @@
       <a href="mailto:info@kosekenerji.com" class="cc">
         <div class="cc-icon"><Icon name="Mail" size={22}/></div>
         <div class="cc-body">
-          <span class="cc-label">E-posta</span>
+          <span class="cc-label">{$t('pages.contact.emailLbl')}</span>
           <span class="cc-main">info@kosekenerji.com</span>
           <span class="cc-sub">teklif@kosekenerji.com</span>
         </div>
@@ -79,8 +80,8 @@
       <div class="cc">
         <div class="cc-icon"><Icon name="Clock" size={22}/></div>
         <div class="cc-body">
-          <span class="cc-label">Çalışma Saatleri</span>
-          <span class="cc-main">Pzt – Cmt · 08:00 – 18:00</span>
+          <span class="cc-label">{$t('pages.contact.hoursLbl')}</span>
+          <span class="cc-main">{$t('pages.contact.hoursVal')}</span>
           
         </div>
       </div>
@@ -95,49 +96,49 @@
     <div class="reach-grid">
 
       <div class="reach-left">
-        <div class="eyebrow">/ HIZLI İLETİŞİM</div>
-        <h2 class="display-lg" style="margin: 20px 0 32px">BİZE<br/>ULAŞIN.</h2>
+        <div class="eyebrow">{$t('pages.contact.quickContact')}</div>
+        <h2 class="display-lg" style="margin: 20px 0 32px">{@html $t('pages.contact.reachTitle')}</h2>
         <div class="reach-btns">
           <a href="tel:+905425338047" class="reach-btn reach-btn-primary">
             <Icon name="Phone" size={18}/>
-            Hemen Ara
+            {$t('pages.contact.callNow')}
           </a>
           <a href="mailto:teklif@kosekenerji.com" class="reach-btn reach-btn-ghost">
             <Icon name="Mail" size={18}/>
-            Teklif İste
+            {$t('pages.contact.getQuote')}
           </a>
           <a href="https://wa.me/905425338047" target="_blank" rel="noopener noreferrer" class="reach-btn reach-btn-wa">
             <Icon name="WhatsApp" size={18}/>
-            WhatsApp
+            {$t('pages.contact.whatsapp')}
           </a>
         </div>
-        <p class="reach-note">Mühendisiniz 24 saat içinde sizi arar. Keşif ve fizibilite ücretsizdir.</p>
+        <p class="reach-note">{$t('pages.contact.engineerNote')}</p>
       </div>
 
       <div class="reach-right">
         <div class="office-detail">
           <div class="od-row">
-            <span class="od-key">Şirket</span>
+            <span class="od-key">{$t('pages.contact.company')}</span>
             <span class="od-val">Kösek Enerji Mühendislik ve Elektrik Hizmetleri Sanayi Ticaret Limited Şirketi</span>
           </div>
           <div class="od-row">
-            <span class="od-key">Vergi No</span>
+            <span class="od-key">{$t('pages.contact.taxNo')}</span>
             <span class="od-val">5881221574 · Antalya Kurumlar VD</span>
           </div>
           <div class="od-row">
-            <span class="od-key">Adres</span>
+            <span class="od-key">{$t('pages.contact.address')}</span>
             <span class="od-val">Cumhuriyet Mah. Fatih Cad. Kılınç Apt. No:45 İç Kapı No:B<br/>Muratpaşa / Antalya</span>
           </div>
           <div class="od-row">
-            <span class="od-key">Telefon</span>
+            <span class="od-key">{$t('pages.contact.phone')}</span>
             <span class="od-val">+90 542 533 80 47</span>
           </div>
           <div class="od-row">
-            <span class="od-key">E-posta</span>
+            <span class="od-key">{$t('pages.contact.email')}</span>
             <span class="od-val">info@kosekenerji.com</span>
           </div>
           <div class="od-row">
-            <span class="od-key">Sertifika</span>
+            <span class="od-key">{$t('pages.contact.certificate')}</span>
             <span class="od-val">EMO · TEDAŞ · ISO 9001:2015</span>
           </div>
         </div>
@@ -169,8 +170,8 @@
 <section class="cta-band">
   <div class="container">
     <div class="cta-band-inner">
-      <h2>Projeniz için<br/>ücretsiz keşif.</h2>
-      <a href="tel:+905425338047" class="cta-band-cta"><Icon name="Phone" size={18}/> Hemen iletişime geç</a>
+      <h2>{@html $t('pages.contact.ctaTitle')}</h2>
+      <a href="tel:+905425338047" class="cta-band-cta"><Icon name="Phone" size={18}/> {$t('pages.contact.ctaBtn')}</a>
     </div>
   </div>
 </section>

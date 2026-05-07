@@ -2,6 +2,7 @@
   import Icon from '$lib/components/Icon.svelte';
   import SEO from '$lib/components/SEO.svelte';
   import { SERVICES } from '$lib/data.js';
+  import { t } from '$lib/i18n/index.js';
 
   let active = 0;
 
@@ -39,8 +40,8 @@
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>
   <div class="container" style="position: relative; z-index: 2">
-    <h1 class="display-xl">UÇTAN UCA<br/><span style="color: var(--accent)">ELEKTRİK</span> MÜHENDİSLİĞİ.</h1>
-    <p class="lead">Antalya'da tasarımdan uygulamaya, devreye almadan bakıma; tüm enerji yatırımınızı tek bir EMO onaylı mühendislik ortağıyla yönetin.</p>
+    <h1 class="display-xl">{@html $t('pages.services.heroTitle')}</h1>
+    <p class="lead">{$t('pages.services.heroLead')}</p>
   </div>
 </section>
 
@@ -57,7 +58,7 @@
             on:click={() => active = i}
           >
             <span class="snav-num">{String(i + 1).padStart(2, '0')}</span>
-            <span class="snav-title">{s.title}</span>
+            <span class="snav-title">{$t(`data.svc.${s.slug}`)?.title ?? s.title}</span>
             <span class="snav-arrow"><Icon name="Arrow" size={14}/></span>
           </button>
         {/each}
@@ -72,27 +73,27 @@
                 <Icon name={SERVICES[active].icon} size={28}/>
               </div>
               <div class="detail-tags">
-                {#each SERVICES[active].tags as t}
-                  <span class="detail-tag">{t}</span>
+                {#each SERVICES[active].tags as tag}
+                  <span class="detail-tag">{tag}</span>
                 {/each}
               </div>
               <span class="detail-index">{String(active + 1).padStart(2, '0')} / {String(SERVICES.length).padStart(2, '0')}</span>
             </header>
 
-            <h2 class="detail-title">{SERVICES[active].title}</h2>
-            <p class="detail-lead">{SERVICES[active].long}</p>
+            <h2 class="detail-title">{$t(`data.svc.${SERVICES[active].slug}`)?.title ?? SERVICES[active].title}</h2>
+            <p class="detail-lead">{$t(`data.svc.${SERVICES[active].slug}`)?.long ?? SERVICES[active].long}</p>
 
             <div class="detail-bullets">
-              <div class="bullets-label">Kapsam</div>
+              <div class="bullets-label">{$t('pages.services.scope')}</div>
               <ul class="bullets-grid">
-                {#each SERVICES[active].bullets as b}
+                {#each ($t(`data.svc.${SERVICES[active].slug}`)?.bullets ?? SERVICES[active].bullets) as b}
                   <li>{b}</li>
                 {/each}
               </ul>
             </div>
 
             <a href="/iletisim" class="detail-cta">
-              Bu hizmet için teklif al <Icon name="ArrowUR" size={15}/>
+              {$t('pages.services.cta')} <Icon name="ArrowUR" size={15}/>
             </a>
           </div>
         {/key}
@@ -105,8 +106,8 @@
 <section class="cta-band">
   <div class="container">
     <div class="cta-band-inner">
-      <h2>Hangi hizmete<br/>ihtiyacınız var?</h2>
-      <a href="/iletisim" class="cta-band-cta"><Icon name="Phone" size={18}/> Mühendisle görüş</a>
+      <h2>{@html $t('pages.services.ctaTitle')}</h2>
+      <a href="/iletisim" class="cta-band-cta"><Icon name="Phone" size={18}/> {$t('pages.services.ctaBtn')}</a>
     </div>
   </div>
 </section>

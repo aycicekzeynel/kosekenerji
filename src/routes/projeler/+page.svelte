@@ -1,16 +1,17 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
   import SEO from '$lib/components/SEO.svelte';
-  import { PROJECTS, TESTIMONIALS } from '$lib/data.js';
+  import { PROJECTS } from '$lib/data.js';
+  import { t } from '$lib/i18n/index.js';
 
   let filter = 'hepsi';
 
-  const cats = [
-    { id: 'hepsi',        label: 'Tüm Projeler' },
-    { id: 'endustriyel',  label: 'Endüstriyel'  },
-    { id: 'yenilenebilir',label: 'GES & Yenilenebilir' },
-    { id: 'otomasyon',    label: 'Otomasyon'    },
-    { id: 'aydinlatma',   label: 'Aydınlatma'   },
+  $: cats = [
+    { id: 'hepsi',         label: $t('pages.projects.filters.all') },
+    { id: 'endustriyel',   label: $t('pages.projects.filters.industrial') },
+    { id: 'yenilenebilir', label: $t('pages.projects.filters.renewable') },
+    { id: 'otomasyon',     label: $t('pages.projects.filters.automation') },
+    { id: 'aydinlatma',    label: $t('pages.projects.filters.lighting') },
   ];
 
   const featured = PROJECTS.find(p => p.featured);
@@ -51,34 +52,30 @@
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>
   <div class="container" style="position:relative;z-index:2">
     <div class="ph-eyebrow">
-      <span class="blink"></span>/ 340+ TAMAMLANMIŞ PROJE
+      <span class="blink"></span>{$t('pages.projects.heroEyebrow')}
     </div>
-    <h1 class="display-xl">
-      SAHADA BIRAKTIĞIMIZ<br/>
-      <span style="color:var(--accent)">MÜHENDİSLİK</span> İZİ.
-    </h1>
-    <p class="lead">Antalya ve Türkiye genelinde yüksek gerilimden güneş santrallerine, SCADA otomasyonundan LED aydınlatmaya; tamamladığımız seçilmiş referans projeler.</p>
+    <h1 class="display-xl">{@html $t('pages.projects.heroTitle')}</h1>
+    <p class="lead">{$t('pages.projects.heroLead')}</p>
   </div>
-  <!-- Stat strip inside hero -->
   <div class="hero-stats">
     <div class="hs-item">
       <span class="hs-n">340<span class="hs-plus">+</span></span>
-      <span class="hs-l">Tamamlanan Proje</span>
+      <span class="hs-l">{$t('pages.projects.stat1')}</span>
     </div>
     <div class="hs-div"></div>
     <div class="hs-item">
       <span class="hs-n">185<span class="hs-unit">MW</span></span>
-      <span class="hs-l">Kurulu GES Gücü</span>
+      <span class="hs-l">{$t('pages.projects.stat2')}</span>
     </div>
     <div class="hs-div"></div>
     <div class="hs-item">
       <span class="hs-n">24<span class="hs-unit">YIL</span></span>
-      <span class="hs-l">Sektör Deneyimi</span>
+      <span class="hs-l">{$t('pages.projects.stat3')}</span>
     </div>
     <div class="hs-div"></div>
     <div class="hs-item">
       <span class="hs-n">97<span class="hs-unit">%</span></span>
-      <span class="hs-l">Zamanında Teslimat</span>
+      <span class="hs-l">{$t('pages.projects.stat4')}</span>
     </div>
   </div>
 </section>
@@ -125,7 +122,7 @@
           <span class="feat-metric-num">{featured.metric.split(' ')[0]}</span>
           <span class="feat-metric-unit">{featured.metric.split(' ').slice(1).join(' ')}</span>
         </div>
-        <span class="feat-badge-featured">/ ÖNE ÇIKAN PROJE</span>
+        <span class="feat-badge-featured">{$t('pages.projects.featured')}</span>
       </div>
 
       <!-- Right: Content -->
@@ -143,7 +140,7 @@
           {/each}
         </ul>
         <a href="/iletisim" class="feat-cta">
-          Benzer proje için teklif al <Icon name="ArrowUR" size={14}/>
+          {$t('pages.projects.contactBtn')} <Icon name="ArrowUR" size={14}/>
         </a>
       </div>
     </div>
@@ -274,15 +271,15 @@
 <!-- ── TESTIMONIALS ── -->
 <section class="testi-section">
   <div class="container">
-    <div class="testi-eyebrow">/ MÜŞTERİLERİMİZ NE DİYOR?</div>
+    <div class="testi-eyebrow">{$t('pages.projects.testiTitle')}</div>
     <div class="testi-grid">
-      {#each TESTIMONIALS as t}
+      {#each $t('data.testimonials') as testi}
         <div class="testi-card">
           <div class="testi-quote-mark">"</div>
-          <p class="testi-q">{t.q}</p>
+          <p class="testi-q">{testi.q}</p>
           <div class="testi-author">
-            <span class="testi-name">{t.n}</span>
-            <span class="testi-role">{t.r}</span>
+            <span class="testi-name">{testi.n}</span>
+            <span class="testi-role">{testi.r}</span>
           </div>
         </div>
       {/each}
@@ -294,8 +291,8 @@
 <section class="cta-band">
   <div class="container">
     <div class="cta-band-inner">
-      <h2>Projeniz bu listede<br/>yer alsın.</h2>
-      <a href="/iletisim" class="cta-band-cta"><Icon name="Bolt" size={18}/> Ücretsiz keşif başlat</a>
+      <h2>{@html $t('pages.projects.ctaTitle')}</h2>
+      <a href="/iletisim" class="cta-band-cta"><Icon name="Bolt" size={18}/> {$t('pages.contact.ctaBtn')}</a>
     </div>
   </div>
 </section>

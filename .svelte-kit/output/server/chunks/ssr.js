@@ -9,6 +9,9 @@ function blank_object() {
 function run_all(fns) {
   fns.forEach(run);
 }
+function is_function(thing) {
+  return typeof thing === "function";
+}
 function safe_not_equal(a, b) {
   return a != a ? b == b : a !== b || a && typeof a === "object" || typeof a === "function";
 }
@@ -219,18 +222,20 @@ function style_object_to_string(style_object) {
   return Object.keys(style_object).filter((key) => style_object[key] != null && style_object[key] !== "").map((key) => `${key}: ${escape_attribute_value(style_object[key])};`).join(" ");
 }
 export {
-  setContext as a,
-  subscribe as b,
+  subscribe as a,
+  add_attribute as b,
   create_ssr_component as c,
-  add_attribute as d,
+  escape as d,
   each as e,
-  escape as f,
+  spread as f,
   getContext as g,
-  spread as h,
-  escape_object as i,
-  escape_attribute_value as j,
+  escape_object as h,
+  escape_attribute_value as i,
+  safe_not_equal as j,
+  is_function as k,
   missing_component as m,
   noop as n,
-  safe_not_equal as s,
+  run_all as r,
+  setContext as s,
   validate_component as v
 };

@@ -282,26 +282,6 @@ const PROJECTS = [
   }
 ];
 const CLIENTS = ["ANTALYA OSB", "TEKNOSAN", "EGE PLAS", "ARÇINLAR", "KARMET", "NOVA HOLDING", "AYDIN OSB", "KOSKİ"];
-const VALUES = [
-  { i: "Shield", n: "01", t: "Güvenlik Önce", d: "Her sahada, her ekipte iş güvenliği protokolleri taviz vermeden uygulanır. Sıfır iş kazası hedefimizdir." },
-  { i: "Bolt", n: "02", t: "Mühendislik Disiplini", d: "Her proje hesaplanır, her tasarım denetlenir, her uygulama kontrol edilir. EMO sertifikalı kadromuzla." },
-  { i: "Clock", n: "03", t: "Söze Sadakat", d: "Verilen tarih, verilen söz. 24 yılda bitirdiğimiz 340+ projede zamanında teslimat oranımız %97." },
-  { i: "Wrench", n: "04", t: "Sürekli Destek", d: "Devreye alma bizim için bitiş değil, başlangıç. Bakım ve servis ekibimiz 7/24 yanınızda." },
-  { i: "Cpu", n: "05", t: "Teknolojiye Açıklık", d: "PLC, SCADA, IoT, dijital ikiz... Her yeni teknolojiyi öğrenir, sahada uygulanabilir hale getiririz." },
-  { i: "Sun", n: "06", t: "Sürdürülebilirlik", d: "Yenilenebilir enerji, verimlilik ve LED dönüşüm projelerimizle düşük karbonlu geleceğin parçasıyız." }
-];
-const PROCESS_STEPS = [
-  { t: "KEŞİF & ANALİZ", d: "Sahanızı ziyaret eder, mevcut elektrik altyapınızı analiz eder ve ihtiyacınıza özel çözüm haritası çıkarırız." },
-  { t: "MÜHENDİSLİK TASARIM", d: "EMO yetkili mühendisler eşliğinde, ilgili standartlara (TS EN, IEC) uygun proje ve hesaplamaları hazırlarız." },
-  { t: "TEDARİK & İMALAT", d: "Onaylı tedarikçi ağımız ve kendi pano imalat atölyemizle, malzemeleri kalite kontrol süreçlerinden geçiririz." },
-  { t: "SAHA UYGULAMA", d: "Sertifikalı ekiplerimizle iş güvenliği protokollerine uygun, planlı ve denetimli saha çalışması yürütürüz." },
-  { t: "TEST & DEVREYE ALMA", d: "TEDAŞ kabul testleri, izolasyon, topraklama ve fonksiyon testleri sonrası sistemi devreye alırız." },
-  { t: "BAKIM & DESTEK", d: "Devreye alma sonrası periyodik bakım, 7/24 acil servis ve garanti süreçleriyle yanınızdayız." }
-];
-const TESTIMONIALS = [
-  { q: "Üretim hattımızın enerji altyapısını sıfırdan kurdular. 6 aylık projede tek bir gün gecikme yaşamadık. Mühendislik kalitesi olağanüstü.", n: "Mehmet Yıldırım", r: "Üretim Müdürü · Karmet Otomotiv" },
-  { q: "2.4 MWp çatı GES projemizde, fizibiliteden devreye almaya kadar her adımda yanımızdaydılar. Performans hedeflerini ilk yıl %108 geçti.", n: "Ayşe Demir", r: "Genel Müdür · Ege Plastik" }
-];
 const NAV_LINKS = [
   { href: "/", label: "Ana Sayfa" },
   { href: "/kurumsal", label: "Kurumsal" },
@@ -313,9 +293,6 @@ const NAV_LINKS = [
 export {
   CLIENTS as C,
   NAV_LINKS as N,
-  PROCESS_STEPS as P,
-  SERVICES as S,
-  TESTIMONIALS as T,
-  VALUES as V,
-  PROJECTS as a
+  PROJECTS as P,
+  SERVICES as S
 };
