@@ -149,22 +149,67 @@
 </section>
 
 <!-- Google Maps -->
-<div class="map-wrapper">
-  <div class="map-label">
-    <Icon name="Pin" size={14}/>
-    Muratpaşa · Antalya
+<section class="map-section">
+  <div class="container">
+    <div class="map-head">
+      <div class="eyebrow map-eyebrow">
+        <span class="map-dot"></span>
+        / KONUM · GPS
+      </div>
+      <div class="map-coords">
+        <span class="coord"><span class="coord-k">LAT</span><span class="coord-v">36.8944° N</span></span>
+        <span class="coord-sep">·</span>
+        <span class="coord"><span class="coord-k">LNG</span><span class="coord-v">30.6997° E</span></span>
+        <span class="coord-sep">·</span>
+        <span class="coord"><span class="coord-k">ALT</span><span class="coord-v">39 m</span></span>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <iframe
+        title="Kösek Enerji Konum"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.5!2d30.6997!3d36.8944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c38f3cc0e3c7c9%3A0x1!2sMuratpa%C5%9Fa%2C+Antalya!5e0!3m2!1str!2str!4v1714999999999!5m2!1str!2str"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        class="map-iframe"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+
+      <!-- Kenar gradyanları -->
+      <div class="map-fade map-fade-top"></div>
+      <div class="map-fade map-fade-bottom"></div>
+      <div class="map-fade map-fade-left"></div>
+      <div class="map-fade map-fade-right"></div>
+
+      <!-- Adres paneli -->
+      <div class="map-address">
+        <div class="map-address-icon"><Icon name="Pin" size={15}/></div>
+        <div class="map-address-body">
+          <div class="map-address-name">Kösek Enerji Mühendislik</div>
+          <div class="map-address-line">Cumhuriyet Mah. Fatih Cad. Kılınç Apt. No:45/B</div>
+          <div class="map-address-city">07040 Muratpaşa / Antalya</div>
+        </div>
+        <a
+          href="https://maps.google.com/?q=36.8944,30.6997"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-open-btn"
+        >
+          Google Maps <Icon name="ArrowUR" size={11}/>
+        </a>
+      </div>
+
+      <!-- Sinyal halkası (merkezi vurgu) -->
+      <div class="map-pulse" aria-hidden="true">
+        <div class="map-pulse-ring"></div>
+        <div class="map-pulse-dot"></div>
+      </div>
+    </div>
   </div>
-  <iframe
-    title="Kösek Enerji Konum"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.5!2d30.6997!3d36.8944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c38f3cc0e3c7c9%3A0x1!2sMuratpa%C5%9Fa%2C+Antalya!5e0!3m2!1str!2str!4v1714999999999!5m2!1str!2str"
-    width="100%"
-    height="100%"
-    style="border:0; filter: grayscale(0.2) contrast(1.05);"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-  ></iframe>
-</div>
+</section>
 
 <!-- CTA band -->
 <section class="cta-band">
@@ -315,28 +360,189 @@
   .od-val { font-size: 14px; color: var(--text-dim); line-height: 1.55; }
 
   /* ── Harita ── */
-  .map-wrapper {
-    height: 520px;
-    position: relative;
+  .map-section {
+    background: var(--bg-deep);
     border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    padding: 60px 0 80px;
   }
-  .map-label {
-    position: absolute;
-    top: 20px; left: 20px;
-    z-index: 10;
+
+  .map-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .map-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: var(--bg-deep);
-    border: 1px solid var(--line);
-    border-radius: var(--r-sm);
-    padding: 8px 14px;
+    gap: 10px;
+  }
+  .map-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: mapBlink 1.8s ease-in-out infinite;
+  }
+  @keyframes mapBlink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+  .map-coords {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-family: var(--font-mono);
     font-size: 11px;
-    letter-spacing: 0.14em;
+  }
+  .coord { display: flex; align-items: center; gap: 5px; }
+  .coord-k {
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+    font-size: 10px;
+  }
+  .coord-v { color: var(--accent); letter-spacing: 0.06em; }
+  .coord-sep { color: var(--line); }
+
+  .map-card {
+    position: relative;
+    height: 480px;
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: var(--bg-card);
+  }
+
+  .map-iframe {
+    width: 100%; height: 100%;
+    display: block;
+    filter: grayscale(1) brightness(0.42) contrast(1.15) sepia(0.15);
+    transition: filter 0.4s ease;
+  }
+  .map-card:hover .map-iframe {
+    filter: grayscale(0.8) brightness(0.55) contrast(1.1);
+  }
+
+  /* Kenar gradyanları */
+  .map-fade {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .map-fade-top {
+    top: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, var(--bg-card), transparent);
+  }
+  .map-fade-bottom {
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--bg-card), transparent);
+  }
+  .map-fade-left {
+    top: 0; left: 0; bottom: 0;
+    width: 120px;
+    background: linear-gradient(to right, var(--bg-card), transparent);
+  }
+  .map-fade-right {
+    top: 0; right: 0; bottom: 0;
+    width: 120px;
+    background: linear-gradient(to left, var(--bg-card), transparent);
+  }
+
+  /* Adres paneli */
+  .map-address {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    z-index: 10;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(2,4,10,0.88);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    padding: 18px 20px;
+    backdrop-filter: blur(12px);
+    max-width: 400px;
+  }
+  .map-address-icon {
+    width: 34px; height: 34px;
+    display: grid;
+    place-items: center;
+    background: rgba(255,212,0,0.08);
+    border: 1px solid rgba(255,212,0,0.2);
+    border-radius: var(--r-sm);
     color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .map-address-body { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+  .map-address-name {
+    font-family: var(--font-display-alt);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.01em;
+  }
+  .map-address-line { font-size: 12px; color: var(--text-dim); line-height: 1.45; }
+  .map-address-city {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .map-open-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    background: var(--accent);
+    color: var(--bg-deep);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-radius: var(--r-sm);
+    white-space: nowrap;
+    align-self: center;
+    flex-shrink: 0;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .map-open-btn:hover {
+    box-shadow: 0 4px 16px rgba(255,212,0,0.35);
+    transform: translateY(-1px);
+  }
+
+  /* Sinyal halkası */
+  .map-pulse {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    pointer-events: none;
+  }
+  .map-pulse-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255,212,0,0.3), 0 0 12px rgba(255,212,0,0.5);
+    position: relative;
+    z-index: 2;
+  }
+  .map-pulse-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    animation: mapPulse 2s ease-out infinite;
+  }
+  @keyframes mapPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(255,212,0,0.5); }
+    70%  { box-shadow: 0 0 0 40px rgba(255,212,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,212,0,0); }
   }
 
   @media (max-width: 960px) {
@@ -345,7 +551,8 @@
     .cc:nth-child(3), .cc:nth-child(4) { border-top: 1px solid var(--line); }
     .reach-grid { grid-template-columns: 1fr; gap: 48px; }
     .reach-btns { flex-wrap: wrap; }
-    .map-wrapper { height: 400px; }
+    .map-card { height: 400px; }
+    .map-address { max-width: calc(100% - 56px); }
   }
   @media (max-width: 540px) {
     .contact-cards { grid-template-columns: 1fr; }
