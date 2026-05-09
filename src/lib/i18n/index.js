@@ -15,7 +15,6 @@ export const locale = writable('tr');
 
 export function setLocale(lang) {
   locale.set(lang);
-  try { localStorage.setItem('kosek_lang', lang); } catch (_) {}
 }
 
 export const t = derived(locale, $l => {
@@ -31,3 +30,7 @@ export const t = derived(locale, $l => {
     return val ?? key;
   };
 });
+
+export const link = derived(locale, $l =>
+  (path) => $l === 'tr' ? path : `/${$l}${path === '/' ? '' : path}`
+);

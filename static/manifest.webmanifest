@@ -1,0 +1,13 @@
+{
+  "name": "Kösek Enerji",
+  "short_name": "Kösek",
+  "description": "Antalya endüstriyel elektrik mühendislik firması — yüksek gerilim, pano imalatı, GES ve SCADA otomasyon",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#02040A",
+  "theme_color": "#FFD400",
+  "lang": "tr",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

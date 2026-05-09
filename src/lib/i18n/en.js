@@ -13,6 +13,7 @@ export default {
   },
   pages: {
     home: {
+      seo: { title: 'Kösek Enerji | Industrial Electrical & Energy Engineering in Antalya', description: 'High voltage, solar power plants, panel manufacturing and SCADA automation services in Antalya. 24 years of experience, EMO & TEDAŞ certified, 48 specialists.', keywords: 'Antalya electrical engineering, industrial electrical installation, high voltage Turkey, solar panels, panel manufacturing, SCADA, automation' },
       eyebrow: 'SYSTEM ACTIVE · ANTALYA, TURKEY',
       headline: '<span class="line">ENGINEERING</span><span class="line"><span class="accent">POWER</span> THAT</span><span class="line"><span class="outline">DRIVES</span> INDUSTRY.</span>',
       lead: 'Based in Antalya since 2001 — from high-voltage facilities to solar power plants, from panel manufacturing to SCADA automation. The EMO-certified engineering firm powering Anatolia\'s industry.',
@@ -27,12 +28,14 @@ export default {
       ctaTitle: 'Free site survey<br/>for your project.',
     },
     services: {
+      seo: { title: 'Services | Kösek Enerji — High Voltage, Solar, Panel Manufacturing, Automation', description: 'High voltage facilities, solar projects, industrial panel manufacturing, SCADA automation and maintenance in Antalya. EMO-certified engineering.', keywords: 'high voltage installation Antalya, solar power plant Turkey, industrial panel manufacturing, SCADA automation, electrical maintenance' },
       heroTitle: 'END-TO-END<br/><span style="color:var(--accent)">ELECTRICAL</span> ENGINEERING.',
       heroLead: 'From design to implementation, commissioning to maintenance — manage your entire energy investment with a single EMO-certified engineering partner in Antalya.',
       scope: 'Scope', cta: 'Get a quote for this service',
       ctaTitle: 'Which service do<br/>you need?', ctaBtn: 'Talk to an Engineer',
     },
     projects: {
+      seo: { title: 'Projects | Kösek Enerji — 340+ Completed Electrical & Energy Projects', description: 'Over 340 completed industrial electrical and energy projects across Antalya and Turkey. Solar, high voltage and automation references.', keywords: 'electrical projects Turkey, solar farm references, industrial automation projects, energy projects Antalya' },
       heroEyebrow: '/ 340+ COMPLETED PROJECTS',
       heroTitle: 'ENGINEERING MILESTONES<br/><span style="color:var(--accent)">LEFT IN</span> THE FIELD.',
       heroLead: 'Across Antalya and Turkey — from high-voltage installations to solar farms, SCADA automation to LED lighting. Selected reference projects.',
@@ -43,6 +46,7 @@ export default {
       ctaTitle: 'Let us bring your<br/>project to life.',
     },
     corporate: {
+      seo: { title: 'Corporate | Kösek Enerji — Trusted Electrical Engineering Since 2001', description: 'Kösek Enerji corporate profile. ISO 9001:2015, EMO and TEDAŞ certified, 24 years of industrial electrical installation experience in Antalya.', keywords: 'Kösek Enerji corporate, ISO 9001 electrical company, EMO certified engineering, TEDAŞ approved contractor' },
       heroTitle: 'WE BELIEVE IN THE<br/><span style="color:var(--accent)">POWER OF</span> ENGINEERING.',
       heroLead: 'Since 2001, the trusted partner of Antalya\'s industry in electrical installation and energy solutions. Built in Antalya, grown with Antalya.',
       valuesEyebrow: '/ VALUES', valuesTitle: 'The principles that define us.',
@@ -51,6 +55,7 @@ export default {
       ctaTitle: 'Free site survey<br/>for your project.',
     },
     about: {
+      seo: { title: 'About Us | Kösek Enerji — 48 Specialists, 24 Years Experience', description: 'Antalya-based engineering firm since 2001. 48 specialists, 340+ projects, EMO-certified team. Our mission, vision and values.', keywords: 'Kösek Enerji about, electrical engineering firm Turkey, industrial electrical Antalya, EMO certified team' },
       heroTitle: '<span style="color:var(--accent)">AN ELECTRICIAN\'S</span><br/>QUARTER CENTURY.',
       heroLead: 'Our story started in a small workshop in Antalya in 2001. Today, 48 engineers and technicians extend our work across Anatolia.',
       mvEyebrow: '/ MISSION & VISION',
@@ -73,6 +78,7 @@ export default {
       ],
     },
     contact: {
+      seo: { title: 'Contact | Kösek Enerji — Free Site Survey & Quote, Antalya', description: 'Kösek Enerji contact. Based in Antalya, Mon–Sat 08:00–18:00. Site survey and feasibility are free — call or WhatsApp us now.', keywords: 'Kösek Enerji contact, Antalya electrical company contact, free site survey, get a quote' },
       heroTitle: 'LET\'S TALK.<br/>LET\'S EVALUATE YOUR PROJECT.',
       heroLead: 'Site survey, feasibility and quote are completely free. Call or write directly — we respond within 24 hours.',
       phoneLbl: 'Phone', whatsappLbl: 'WhatsApp', emailLbl: 'Email',

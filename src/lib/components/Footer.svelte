@@ -1,6 +1,6 @@
 <script>
   import Icon from './Icon.svelte';
-  import { t } from '$lib/i18n/index.js';
+  import { t, link } from '$lib/i18n/index.js';
 </script>
 
 <footer class="footer">
@@ -110,7 +110,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="logo">
+        <a href={$link('/')} class="logo">
           <span class="logo-mark"><Icon name="LogoMark" size={22}/></span>
           <span class="logo-text"><span>KÖSEK ENERJİ</span></span>
         </a>
@@ -119,21 +119,21 @@
       <div>
         <h5>{$t('footer.pagesTitle')}</h5>
         <ul>
-          <li><a href="/kurumsal">{$t('nav.corporate')}</a></li>
-          <li><a href="/hakkimizda">{$t('nav.about')}</a></li>
-          <li><a href="/hizmetler">{$t('nav.services')}</a></li>
-          <li><a href="/projeler">{$t('nav.projects')}</a></li>
-          <li><a href="/iletisim">{$t('nav.contact')}</a></li>
+          <li><a href={$link('/kurumsal')}>{$t('nav.corporate')}</a></li>
+          <li><a href={$link('/hakkimizda')}>{$t('nav.about')}</a></li>
+          <li><a href={$link('/hizmetler')}>{$t('nav.services')}</a></li>
+          <li><a href={$link('/projeler')}>{$t('nav.projects')}</a></li>
+          <li><a href={$link('/iletisim')}>{$t('nav.contact')}</a></li>
         </ul>
       </div>
       <div>
         <h5>{$t('footer.servicesTitle')}</h5>
         <ul>
-          <li><a href="/hizmetler">{$t('footer.links.highVoltage')}</a></li>
-          <li><a href="/hizmetler">{$t('footer.links.panelMfg')}</a></li>
-          <li><a href="/hizmetler">{$t('footer.links.ges')}</a></li>
-          <li><a href="/hizmetler">{$t('footer.links.automation')}</a></li>
-          <li><a href="/hizmetler">{$t('footer.links.maintenance')}</a></li>
+          <li><a href={$link('/hizmetler')}>{$t('footer.links.highVoltage')}</a></li>
+          <li><a href={$link('/hizmetler')}>{$t('footer.links.panelMfg')}</a></li>
+          <li><a href={$link('/hizmetler')}>{$t('footer.links.ges')}</a></li>
+          <li><a href={$link('/hizmetler')}>{$t('footer.links.automation')}</a></li>
+          <li><a href={$link('/hizmetler')}>{$t('footer.links.maintenance')}</a></li>
         </ul>
       </div>
       <div>

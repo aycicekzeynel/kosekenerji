@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/ru/hizmetler/+page.svelte";

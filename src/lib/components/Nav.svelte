@@ -1,20 +1,28 @@
 <script>
   import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
   import Icon from './Icon.svelte';
   import { NAV_LINKS } from '$lib/data.js';
-  import { locale, setLocale, LANGUAGES, t } from '$lib/i18n/index.js';
+  import { locale, LANGUAGES, t, link } from '$lib/i18n/index.js';
 
   let open = false;
   let langOpen = false;
 
   $: currentPath = $page.url.pathname;
+  $: basePath = currentPath.replace(/^\/(en|ru)/, '') || '/';
 
   const navKeys = ['home','corporate','about','services','projects','contact'];
 
   function closeLang() { langOpen = false; }
 
+  function switchLang(code) {
+    langOpen = false;
+    const target = code === 'tr' ? (basePath === '/' ? '/' : basePath) : `/${code}${basePath === '/' ? '' : basePath}`;
+    goto(target);
+  }
+
   function handleLangKey(e, code) {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setLocale(code); langOpen = false; }
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchLang(code); }
     if (e.key === 'Escape') langOpen = false;
   }
 </script>
@@ -23,7 +31,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="/" class="logo">
+    <a href={$link('/')} class="logo">
       <span class="logo-mark"><Icon name="LogoMark" size={22}/></span>
       <span class="logo-text"><span>KÖSEK ENERJİ</span></span>
     </a>
@@ -31,9 +39,9 @@
     <ul class="nav-links" class:open>
       {#each NAV_LINKS as l, i}
         <li>
-          <a href={l.href}
+          <a href={$link(l.href)}
              class="nav-link"
-             class:active={currentPath === l.href}
+             class:active={basePath === l.href}
              on:click={() => open = false}>{$t(`nav.${navKeys[i]}`)}</a>
         </li>
       {/each}
@@ -69,7 +77,7 @@
                 class:selected={$locale === lang.code}
                 role="option"
                 aria-selected={$locale === lang.code}
-                on:click={() => { setLocale(lang.code); langOpen = false; }}
+                on:click={() => switchLang(lang.code)}
                 on:keydown={(e) => handleLangKey(e, lang.code)}
               >
                 <span class="lang-opt-short">{lang.short}</span>
@@ -83,7 +91,7 @@
         {/if}
       </div>
 
-      <a href="/iletisim" class="nav-cta">{$t('nav.cta')} <Icon name="Arrow" size={14}/></a>
+      <a href={$link('/iletisim')} class="nav-cta">{$t('nav.cta')} <Icon name="Arrow" size={14}/></a>
     </div>
 
     <button class="menu-toggle" on:click={() => open = !open} aria-label="Menu"><span></span></button>

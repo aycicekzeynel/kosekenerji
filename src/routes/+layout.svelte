@@ -1,17 +1,13 @@
 <script>
-  import { onMount } from 'svelte';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Icon from '$lib/components/Icon.svelte';
   import { locale } from '$lib/i18n/index.js';
 
-  onMount(() => {
-    try {
-      const saved = localStorage.getItem('kosek_lang');
-      if (saved && ['tr','en','ru'].includes(saved)) locale.set(saved);
-    } catch (_) {}
-  });
+  locale.set('tr'); // SSR default; en/ and ru/ child layouts override this
+
+  $: if (typeof document !== 'undefined') document.documentElement.lang = $locale;
 
   const localBusiness = {
     "@context": "https://schema.org",
@@ -20,7 +16,7 @@
     "alternateName": "Kösek Enerji",
     "url": "https://www.kosekenerji.com",
     "logo": "https://www.kosekenerji.com/favicon.svg",
-    "image": "https://www.kosekenerji.com/og-image.jpg",
+    "image": "https://www.kosekenerji.com/og-image.svg",
     "description": "Antalya merkezli endüstriyel elektrik tesisat, yüksek gerilim tesisleri, pano imalatı, GES ve SCADA otomasyon firması. EMO ve TEDAŞ onaylı, 24 yıllık deneyim.",
     "telephone": "+905425338047",
     "email": "info@kosekenerji.com",
@@ -83,7 +79,6 @@
 >
   <span class="wa-fab-ring"></span>
   <Icon name="WhatsApp" size={26}/>
-  
 </a>
 
 <style>

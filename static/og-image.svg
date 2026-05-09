@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#02040A"/>
+  <defs>
+    <pattern id="g" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0L0 0 0 60" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <ellipse cx="1060" cy="315" rx="420" ry="360" fill="rgba(255,212,0,0.07)"/>
+  <ellipse cx="1060" cy="315" rx="200" ry="200" fill="rgba(255,212,0,0.05)"/>
+  <path d="M990 90 L860 330 L940 330 L865 535 L1100 265 L1010 265 Z"
+    fill="rgba(255,212,0,0.1)" stroke="rgba(255,212,0,0.25)" stroke-width="1.5"/>
+  <rect x="80" y="190" width="5" height="210" fill="#FFD400" rx="2"/>
+  <text x="108" y="300"
+    font-family="Arial Black, Arial, sans-serif"
+    font-weight="900"
+    font-size="82"
+    fill="white"
+    letter-spacing="-1">KÖSEK ENERJİ</text>
+  <text x="110" y="352"
+    font-family="Arial, sans-serif"
+    font-size="19"
+    fill="#FFD400"
+    letter-spacing="5">ANTALYA ENDÜSTRİYEL ELEKTRİK MÜHENDİSLİĞİ</text>
+  <line x1="110" y1="382" x2="720" y2="382" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="110" y="416"
+    font-family="Courier New, monospace"
+    font-size="14"
+    fill="rgba(255,255,255,0.4)"
+    letter-spacing="3">EMO · TEDAŞ · ISO 9001:2015 · 2001'DEN BU YANA</text>
+  <text x="110" y="545"
+    font-family="Courier New, monospace"
+    font-size="15"
+    fill="rgba(255,255,255,0.25)"
+    letter-spacing="1">kosekenerji.com</text>
+</svg>

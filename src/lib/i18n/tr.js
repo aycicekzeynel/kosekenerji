@@ -13,6 +13,7 @@ export default {
   },
   pages: {
     home: {
+      seo: { title: 'Kösek Enerji | Antalya Endüstriyel Elektrik & Enerji Mühendisliği', description: 'Antalya\'da 24 yıllık deneyimle yüksek gerilim, GES, pano imalatı ve SCADA otomasyon hizmetleri. EMO ve TEDAŞ onaylı, 48 uzman kadro.', keywords: 'Antalya elektrik firması, endüstriyel elektrik tesisat, yüksek gerilim, GES, pano imalatı, SCADA, otomasyon' },
       eyebrow: 'SİSTEM AKTİF · ANTALYA, TÜRKİYE',
       headline: '<span class="line">ENDÜSTRİNİN</span><span class="line"><span class="accent">ENERJİSİNİ</span> TAŞIYAN</span><span class="line"><span class="outline">MÜHENDİSLİK</span> GÜCÜ.</span>',
       lead: '2001\'den bu yana yüksek gerilim tesislerinden güneş enerjisi santrallerine, pano imalatından SCADA otomasyonuna — Antalya merkezli, Anadolu sanayisinin enerjisini kuran EMO onaylı mühendislik firması.',
@@ -27,12 +28,14 @@ export default {
       ctaTitle: 'Projeniz için<br/>ücretsiz keşif.',
     },
     services: {
+      seo: { title: 'Hizmetler | Kösek Enerji — Yüksek Gerilim, GES, Pano, Otomasyon', description: 'Yüksek gerilim tesisleri, GES projeleri, endüstriyel pano imalatı, SCADA otomasyon ve bakım-onarım. Antalya merkezli, EMO onaylı mühendislik.', keywords: 'yüksek gerilim tesisat Antalya, GES kurulum, endüstriyel pano imalatı, SCADA otomasyon, bakım onarım elektrik' },
       heroTitle: 'UÇTAN UCA<br/><span style="color:var(--accent)">ELEKTRİK</span> MÜHENDİSLİĞİ.',
       heroLead: 'Antalya\'da tasarımdan uygulamaya, devreye almadan bakıma; tüm enerji yatırımınızı tek bir EMO onaylı mühendislik ortağıyla yönetin.',
       scope: 'Kapsam', cta: 'Bu hizmet için teklif al',
       ctaTitle: 'Hangi hizmete<br/>ihtiyacınız var?', ctaBtn: 'Mühendisle görüş',
     },
     projects: {
+      seo: { title: 'Projeler | Kösek Enerji — 340+ Tamamlanmış Elektrik & Enerji Projesi', description: '340\'tan fazla tamamlanmış endüstriyel elektrik ve enerji projesi. Antalya ve Türkiye genelinde GES, yüksek gerilim ve otomasyon referanslarımız.', keywords: 'elektrik projeleri Antalya, GES referansları, endüstriyel otomasyon projeleri, enerji projeleri Türkiye' },
       heroEyebrow: '/ 340+ TAMAMLANMIŞ PROJE',
       heroTitle: 'SAHADA BIRAKTIĞIMIZ<br/><span style="color:var(--accent)">MÜHENDİSLİK</span> İZİ.',
       heroLead: 'Antalya ve Türkiye genelinde yüksek gerilimden güneş santrallerine, SCADA otomasyonundan LED aydınlatmaya; tamamladığımız seçilmiş referans projeler.',
@@ -43,6 +46,7 @@ export default {
       ctaTitle: 'Sizin de projeniz<br/>bizimle hayata geçsin.',
     },
     corporate: {
+      seo: { title: 'Kurumsal | Kösek Enerji — 2001\'den Bu Yana Güvenilir Elektrik Mühendisliği', description: 'Kösek Enerji kurumsal profili. ISO 9001:2015, EMO ve TEDAŞ sertifikalı, 24 yıllık endüstriyel elektrik tesisat deneyimi. Antalya.', keywords: 'Kösek Enerji kurumsal, ISO 9001 elektrik firması, EMO sertifikalı mühendislik, TEDAŞ onaylı müteahhit' },
       heroTitle: 'MÜHENDİSLİĞİN<br/><span style="color:var(--accent)">GÜCÜNE</span> İNANIYORUZ.',
       heroLead: '2001\'den bu yana endüstriyel elektrik tesisat ve enerji çözümlerinde Antalya sanayisinin güvenilir ortağıyız. Antalya\'da kurduk, Antalya\'nın büyümesiyle büyüdük.',
       valuesEyebrow: '/ DEĞERLER', valuesTitle: 'Bizi biz yapan ilkeler.',
@@ -51,6 +55,7 @@ export default {
       ctaTitle: 'Projeniz için<br/>ücretsiz keşif.',
     },
     about: {
+      seo: { title: 'Hakkımızda | Kösek Enerji — 48 Uzman, 24 Yıl Deneyim', description: '2001\'den bu yana Antalya merkezli mühendislik firması. 48 uzman kadro, 340+ proje, EMO sertifikalı ekip. Misyon, vizyon ve değerlerimiz.', keywords: 'Kösek Enerji hakkında, elektrik mühendislik firması Antalya, endüstriyel elektrik 24 yıl, EMO sertifikalı kadro' },
       heroTitle: 'BİR <span style="color:var(--accent)">ELEKTRİKÇİNİN</span><br/>ÇEYREK ASRI.',
       heroLead: '2001 yılında Antalya\'da küçük bir atölyede başlayan hikayemiz, bugün 48 mühendis ve teknisyenle Anadolu\'nun dört bir yanına uzanıyor.',
       mvEyebrow: '/ MİSYON & VİZYON',
@@ -73,6 +78,7 @@ export default {
       ],
     },
     contact: {
+      seo: { title: 'İletişim | Kösek Enerji — Ücretsiz Keşif ve Teklif, Antalya', description: 'Kösek Enerji iletişim. Antalya, Pzt–Cmt 08:00–18:00. Keşif ve fizibilite ücretsiz — hemen arayın veya WhatsApp\'tan yazın.', keywords: 'Kösek Enerji iletişim, Antalya elektrik firması iletişim, ücretsiz keşif, teklif al' },
       heroTitle: 'KONUŞALIM.<br/>PROJENİZİ DEĞERLENDİRELİM.',
       heroLead: 'Keşif, fizibilite ve fiyat teklifi tamamen ücretsiz. Direkt arayın veya yazın — 24 saat içinde dönüş yapıyoruz.',
       phoneLbl: 'Telefon', whatsappLbl: 'WhatsApp', emailLbl: 'E-posta',
