@@ -2,7 +2,7 @@
   import Icon from '$lib/components/Icon.svelte';
   import HeroElectric from '$lib/components/HeroElectric.svelte';
   import Ticker from '$lib/components/Ticker.svelte';
-  import SEO from '$lib/components/SEO.svelte';
+
   import { SERVICES, PROJECTS, CLIENTS } from '$lib/data.js';
   import { t, link } from '$lib/i18n/index.js';
 
@@ -10,11 +10,11 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Kösek Enerji",
-    "url": "https://www.kosekenerji.com",
+    "url": "https://www.kösekenerji.com",
     "description": "Antalya merkezli endüstriyel elektrik mühendislik firması",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://www.kosekenerji.com/hizmetler",
+      "target": "https://www.kösekenerji.com/hizmetler",
       "query-input": "required name=search_term_string"
     }
   };
@@ -31,13 +31,9 @@
   ];
 </script>
 
-<SEO
-  title={$t('pages.home.seo.title')}
-  description={$t('pages.home.seo.description')}
-  keywords={$t('pages.home.seo.keywords')}
-  canonical="/"
-  schema={homeSchema}
-/>
+<svelte:head>
+  {@html `<script type="application/ld+json">${JSON.stringify(homeSchema)}<\/script>`}
+</svelte:head>
 
 <section class="hero">
   <div class="hero-bg">

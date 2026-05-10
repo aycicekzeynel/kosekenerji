@@ -104,7 +104,7 @@
 
     </svg>
 
-    <span class="mega-text">KÖSEK · ENERJİ</span>
+    <span class="mega-text">KÖSEK ENERJİ</span>
   </div>
 
   <div class="container">
@@ -140,7 +140,7 @@
         <h5>{$t('footer.contactTitle')}</h5>
         <ul>
           <li><a href="tel:+905425338047">+90 542 533 80 47</a></li>
-          <li><a href="mailto:info@kosekenerji.com">info@kosekenerji.com</a></li>
+          <li><a href="mailto:info@kösekenerji.com">info@kösekenerji.com</a></li>
           <li>Muratpaşa/Antalya</li>
           <li>{$t('footer.workHours')}</li>
         </ul>

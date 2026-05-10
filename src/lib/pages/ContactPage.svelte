@@ -1,19 +1,19 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
-  import SEO from '$lib/components/SEO.svelte';
+
   import { t } from '$lib/i18n/index.js';
 
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Kösek Enerji İletişim",
-    "url": "https://www.kosekenerji.com/iletisim",
+    "url": "https://www.kösekenerji.com/iletisim",
     "description": "Antalya Muratpaşa'daki Kösek Enerji ofisiyle iletişime geçin",
     "mainEntity": {
       "@type": "LocalBusiness",
       "name": "Kösek Enerji",
       "telephone": "+905425338047",
-      "email": "info@kosekenerji.com",
+      "email": "info@kösekenerji.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Cumhuriyet Mah. Fatih Cad. Kılınç Apt. No:45 İç Kapı No:B",
@@ -26,13 +26,9 @@
   };
 </script>
 
-<SEO
-  title={$t('pages.contact.seo.title')}
-  description={$t('pages.contact.seo.description')}
-  keywords={$t('pages.contact.seo.keywords')}
-  canonical="/iletisim"
-  schema={contactSchema}
-/>
+<svelte:head>
+  {@html `<script type="application/ld+json">${JSON.stringify(contactSchema)}<\/script>`}
+</svelte:head>
 
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>
@@ -67,12 +63,12 @@
         <span class="cc-arrow"><Icon name="ArrowUR" size={14}/></span>
       </a>
 
-      <a href="mailto:info@kosekenerji.com" class="cc">
+      <a href="mailto:info@kösekenerji.com" class="cc">
         <div class="cc-icon"><Icon name="Mail" size={22}/></div>
         <div class="cc-body">
           <span class="cc-label">{$t('pages.contact.emailLbl')}</span>
-          <span class="cc-main">info@kosekenerji.com</span>
-          <span class="cc-sub">teklif@kosekenerji.com</span>
+          <span class="cc-main">info@kösekenerji.com</span>
+          <span class="cc-sub">teklif@kösekenerji.com</span>
         </div>
         <span class="cc-arrow"><Icon name="ArrowUR" size={14}/></span>
       </a>
@@ -103,7 +99,7 @@
             <Icon name="Phone" size={18}/>
             {$t('pages.contact.callNow')}
           </a>
-          <a href="mailto:teklif@kosekenerji.com" class="reach-btn reach-btn-ghost">
+          <a href="mailto:teklif@kösekenerji.com" class="reach-btn reach-btn-ghost">
             <Icon name="Mail" size={18}/>
             {$t('pages.contact.getQuote')}
           </a>
@@ -135,7 +131,7 @@
           </div>
           <div class="od-row">
             <span class="od-key">{$t('pages.contact.email')}</span>
-            <span class="od-val">info@kosekenerji.com</span>
+            <span class="od-val">info@kösekenerji.com</span>
           </div>
           <div class="od-row">
             <span class="od-key">{$t('pages.contact.certificate')}</span>

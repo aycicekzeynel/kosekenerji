@@ -4,22 +4,28 @@
   import Footer from '$lib/components/Footer.svelte';
   import Icon from '$lib/components/Icon.svelte';
   import { locale } from '$lib/i18n/index.js';
+  import { page } from '$app/stores';
 
   locale.set('tr'); // SSR default; en/ and ru/ child layouts override this
 
   $: if (typeof document !== 'undefined') document.documentElement.lang = $locale;
+
+  const SITE = 'https://www.kösekenerji.com';
+  $: basePath = $page.url.pathname.replace(/^\/(en|ru)/, '') || '/';
+  $: canonicalPath = $page.url.pathname;
+  $: seo = $page.data?.seo;
 
   const localBusiness = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ProfessionalService", "ElectricalContractor"],
     "name": "Kösek Enerji Mühendislik ve Elektrik Hizmetleri Sanayi Ticaret Limited Şirketi",
     "alternateName": "Kösek Enerji",
-    "url": "https://www.kosekenerji.com",
-    "logo": "https://www.kosekenerji.com/favicon.svg",
-    "image": "https://www.kosekenerji.com/og-image.svg",
+    "url": "https://www.kösekenerji.com",
+    "logo": "https://www.kösekenerji.com/favicon.svg",
+    "image": "https://www.kösekenerji.com/og-image.svg",
     "description": "Antalya merkezli endüstriyel elektrik tesisat, yüksek gerilim tesisleri, pano imalatı, GES ve SCADA otomasyon firması. EMO ve TEDAŞ onaylı, 24 yıllık deneyim.",
     "telephone": "+905425338047",
-    "email": "info@kosekenerji.com",
+    "email": "info@kösekenerji.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Cumhuriyet Mah. Fatih Cad. Kılınç Apt. No:45 İç Kapı No:B",
@@ -61,6 +67,35 @@
 </script>
 
 <svelte:head>
+  <title>{seo?.title ?? 'Kösek Enerji | Antalya Endüstriyel Elektrik & Enerji Mühendisliği'}</title>
+  <meta name="description" content={seo?.description ?? 'Antalya\'da 24 yıllık deneyimle yüksek gerilim, GES, pano imalatı ve SCADA otomasyon hizmetleri.'} />
+  {#if seo?.keywords}<meta name="keywords" content={seo.keywords} />{/if}
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{SITE}{canonicalPath === '/' ? '' : canonicalPath}" />
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="tr" href="{SITE}{basePath === '/' ? '/' : basePath}" />
+  <link rel="alternate" hreflang="en" href="{SITE}/en{basePath === '/' ? '' : basePath}" />
+  <link rel="alternate" hreflang="ru" href="{SITE}/ru{basePath === '/' ? '' : basePath}" />
+  <link rel="alternate" hreflang="x-default" href="{SITE}{basePath === '/' ? '/' : basePath}" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kösek Enerji" />
+  <meta property="og:title" content={seo?.title ?? 'Kösek Enerji'} />
+  <meta property="og:description" content={seo?.description ?? ''} />
+  <meta property="og:url" content="{SITE}{canonicalPath}" />
+  <meta property="og:image" content="{SITE}/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={seo?.title ?? 'Kösek Enerji'} />
+  <meta name="twitter:description" content={seo?.description ?? ''} />
+  <meta name="twitter:image" content="{SITE}/og-image.svg" />
+
   {@html `<script type="application/ld+json">${JSON.stringify(localBusiness)}<\/script>`}
 </svelte:head>
 

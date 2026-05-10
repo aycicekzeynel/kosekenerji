@@ -1,6 +1,6 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
-  import SEO from '$lib/components/SEO.svelte';
+
   import { SERVICES } from '$lib/data.js';
   import { t, link } from '$lib/i18n/index.js';
 
@@ -29,13 +29,9 @@
   };
 </script>
 
-<SEO
-  title={$t('pages.services.seo.title')}
-  description={$t('pages.services.seo.description')}
-  keywords={$t('pages.services.seo.keywords')}
-  canonical="/hizmetler"
-  schema={servicesSchema}
-/>
+<svelte:head>
+  {@html `<script type="application/ld+json">${JSON.stringify(servicesSchema)}<\/script>`}
+</svelte:head>
 
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>

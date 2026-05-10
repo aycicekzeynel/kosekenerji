@@ -1,6 +1,6 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
-  import SEO from '$lib/components/SEO.svelte';
+
   import { t } from '$lib/i18n/index.js';
 
   const orgSchema = {
@@ -8,7 +8,7 @@
     "@type": "Organization",
     "name": "Kösek Enerji Mühendislik ve Elektrik Hizmetleri Sanayi Ticaret Limited Şirketi",
     "alternateName": "Kösek Enerji",
-    "url": "https://www.kosekenerji.com",
+    "url": "https://www.kösekenerji.com",
     "foundingDate": "2001",
     "numberOfEmployees": { "@type": "QuantitativeValue", "value": 48 },
     "taxID": "5881221574",
@@ -24,13 +24,9 @@
   };
 </script>
 
-<SEO
-  title={$t('pages.corporate.seo.title')}
-  description={$t('pages.corporate.seo.description')}
-  keywords={$t('pages.corporate.seo.keywords')}
-  canonical="/kurumsal"
-  schema={orgSchema}
-/>
+<svelte:head>
+  {@html `<script type="application/ld+json">${JSON.stringify(orgSchema)}<\/script>`}
+</svelte:head>
 
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>

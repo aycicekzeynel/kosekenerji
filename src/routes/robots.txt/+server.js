@@ -3,7 +3,7 @@ export function GET() {
 Allow: /
 Disallow: /api/
 
-Sitemap: https://www.kosekenerji.com/sitemap.xml`;
+Sitemap: https://www.kösekenerji.com/sitemap.xml`;
 
   return new Response(body, {
     headers: {

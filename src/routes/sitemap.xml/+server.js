@@ -1,5 +1,5 @@
 export function GET() {
-  const SITE  = 'https://www.kosekenerji.com';
+  const SITE  = 'https://www.kösekenerji.com';
   const today = new Date().toISOString().split('T')[0];
 
   const paths = [

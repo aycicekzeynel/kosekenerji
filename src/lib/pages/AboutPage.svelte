@@ -1,13 +1,13 @@
 <script>
   import Icon from '$lib/components/Icon.svelte';
-  import SEO from '$lib/components/SEO.svelte';
+
   import { t } from '$lib/i18n/index.js';
 
   const aboutSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "Kösek Enerji Hakkında",
-    "url": "https://www.kosekenerji.com/hakkimizda",
+    "url": "https://www.kösekenerji.com/hakkimizda",
     "description": "Antalya merkezli elektrik mühendislik firması Kösek Enerji'nin hikayesi, değerleri ve mühendislik kadrosu",
     "mainEntity": {
       "@type": "Organization",
@@ -19,13 +19,9 @@
   };
 </script>
 
-<SEO
-  title={$t('pages.about.seo.title')}
-  description={$t('pages.about.seo.description')}
-  keywords={$t('pages.about.seo.keywords')}
-  canonical="/hakkimizda"
-  schema={aboutSchema}
-/>
+<svelte:head>
+  {@html `<script type="application/ld+json">${JSON.stringify(aboutSchema)}<\/script>`}
+</svelte:head>
 
 <section class="page-hero">
   <div class="hero-bg"><div class="hero-bg-grid"></div><div class="hero-bg-glow"></div></div>

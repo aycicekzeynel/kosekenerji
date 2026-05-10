@@ -6,7 +6,8 @@
       "Bash(curl -s http://localhost:5174/hizmetler)",
       "Bash(curl -s http://localhost:5174/en/hizmetler)",
       "Bash(curl -s http://localhost:5174/ru/hizmetler)",
-      "Bash(curl -s http://localhost:5174/sitemap.xml)"
+      "Bash(curl -s http://localhost:5174/sitemap.xml)",
+      "Bash(curl -s http://localhost:5177/sitemap.xml)"
     ]
   }
 }
