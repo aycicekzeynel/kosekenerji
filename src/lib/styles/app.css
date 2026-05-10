@@ -608,8 +608,7 @@
     font-size: clamp(48px, 8vw, 130px);
     line-height: 1;
     letter-spacing: -0.01em;
-    -webkit-text-stroke: 1.5px var(--accent);
-    color: transparent;
+    color: rgba(255,212,0,0.95);
     animation: mega-marquee 18s linear infinite, electricGlow 5s ease-in-out infinite;
     padding: 14px 0;
     text-transform: uppercase;
@@ -625,7 +624,6 @@
     box-shadow:
       0 0 8px var(--accent-glow),
       0 0 24px rgba(255,212,0,0.2);
-    -webkit-text-stroke: 0;
     animation: neonPulse 2s ease-in-out infinite alternate;
   }
   .hero-electric {
@@ -1033,8 +1031,7 @@
     font-family: var(--font-display);
     font-size: clamp(48px, 9vw, 140px);
     line-height: 0.85;
-    -webkit-text-stroke: 1.5px var(--accent);
-    color: transparent;
+    color: rgba(255,212,0,0.95);
     text-align: center;
     letter-spacing: 0;
     text-transform: uppercase;
