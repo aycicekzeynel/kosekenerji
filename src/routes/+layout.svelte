@@ -73,6 +73,7 @@
 </script>
 
 <svelte:head>
+  <meta name="google-site-verification" content="sagAdE_lnZ7olbndNM-QVHn_c5rQ3scUtA3TnlkXdL8" />
   <title>{seo?.title ?? 'Kösek Enerji | Antalya Endüstriyel Elektrik & Enerji Mühendisliği'}</title>
   <meta name="description" content={seo?.description ?? 'Antalya\'da 24 yıllık deneyimle yüksek gerilim, GES, pano imalatı ve SCADA otomasyon hizmetleri.'} />
   {#if seo?.keywords}<meta name="keywords" content={seo.keywords} />{/if}
