@@ -6,7 +6,13 @@
   import { locale } from '$lib/i18n/index.js';
   import { page } from '$app/stores';
 
-  locale.set('tr'); // SSR default; en/ and ru/ child layouts override this
+  locale.set('tr'); // SSR default
+
+  // URL değiştiğinde locale'i reaktif olarak güncelle
+  $: {
+    const lang = $page.url.pathname.match(/^\/(en|ru)/)?.[1];
+    locale.set(lang ?? 'tr');
+  }
 
   $: if (typeof document !== 'undefined') document.documentElement.lang = $locale;
 
