@@ -28,7 +28,7 @@
     "alternateName": "Kösek Enerji",
     "url": "https://www.kösekenerji.com",
     "logo": "https://www.kösekenerji.com/favicon.svg",
-    "image": "https://www.kösekenerji.com/og-image.svg",
+    "image": "https://www.kösekenerji.com/og-image.png",
     "description": "Antalya merkezli endüstriyel elektrik tesisat, yüksek gerilim tesisleri, pano imalatı, GES ve SCADA otomasyon firması. EMO ve TEDAŞ onaylı, 24 yıllık deneyim.",
     "telephone": "+905425338047",
     "email": "info@kösekenerji.com",
@@ -93,7 +93,7 @@
   <meta property="og:title" content={seo?.title ?? 'Kösek Enerji'} />
   <meta property="og:description" content={seo?.description ?? ''} />
   <meta property="og:url" content="{SITE}{canonicalPath}" />
-  <meta property="og:image" content="{SITE}/og-image.svg" />
+  <meta property="og:image" content="{SITE}/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -101,7 +101,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={seo?.title ?? 'Kösek Enerji'} />
   <meta name="twitter:description" content={seo?.description ?? ''} />
-  <meta name="twitter:image" content="{SITE}/og-image.svg" />
+  <meta name="twitter:image" content="{SITE}/og-image.png" />
 
   {@html `<script type="application/ld+json">${JSON.stringify(localBusiness)}<\/script>`}
 </svelte:head>
