@@ -8,7 +8,7 @@
   export let schema = null;
 
   const SITE   = 'https://www.kösekenerji.com';
-  const OG_IMG = `${SITE}/og-image.svg`;
+  const OG_IMG = `${SITE}/og-image.png`;
 
   const OG_LOCALE = { tr: 'tr_TR', en: 'en_US', ru: 'ru_RU' };
 
