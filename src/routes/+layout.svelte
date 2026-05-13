@@ -17,6 +17,7 @@
   $: if (typeof document !== 'undefined') document.documentElement.lang = $locale;
 
   const SITE = 'https://www.kösekenerji.com';
+  const SITE_ASCII = 'https://www.xn--ksekenerji-ecb.com';
   $: basePath = $page.url.pathname.replace(/^\/(en|ru)/, '') || '/';
   $: canonicalPath = $page.url.pathname;
   $: seo = $page.data?.seo;
@@ -93,7 +94,7 @@
   <meta property="og:title" content={seo?.title ?? 'Kösek Enerji'} />
   <meta property="og:description" content={seo?.description ?? ''} />
   <meta property="og:url" content="{SITE}{canonicalPath}" />
-  <meta property="og:image" content="{SITE}/og-image.png" />
+  <meta property="og:image" content="{SITE_ASCII}/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -101,7 +102,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={seo?.title ?? 'Kösek Enerji'} />
   <meta name="twitter:description" content={seo?.description ?? ''} />
-  <meta name="twitter:image" content="{SITE}/og-image.png" />
+  <meta name="twitter:image" content="{SITE_ASCII}/og-image.png" />
 
   {@html `<script type="application/ld+json">${JSON.stringify(localBusiness)}<\/script>`}
 </svelte:head>
