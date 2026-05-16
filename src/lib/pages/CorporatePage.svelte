@@ -9,7 +9,7 @@
     "name": "Kösek Enerji Mühendislik ve Elektrik Hizmetleri Sanayi Ticaret Limited Şirketi",
     "alternateName": "Kösek Enerji",
     "url": "https://www.kösekenerji.com",
-    "foundingDate": "2001",
+    "foundingDate": "2025",
     "numberOfEmployees": { "@type": "QuantitativeValue", "value": 48 },
     "taxID": "5881221574",
     "address": {

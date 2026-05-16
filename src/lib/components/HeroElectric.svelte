@@ -68,7 +68,7 @@
     <text x="640" y="190">N · 02</text>
     <text x="80" y="624">N · 03</text>
     <text x="640" y="624">N · 04</text>
-    <text x="380" y="60" text-anchor="end">400 kV</text>
+    <text x="380" y="60" text-anchor="end">400 V</text>
     <text x="420" y="60">50 Hz</text>
   </g>
 </svg>

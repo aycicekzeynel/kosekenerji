@@ -133,10 +133,7 @@
             <span class="od-key">{$t('pages.contact.email')}</span>
             <span class="od-val">info@kösekenerji.com</span>
           </div>
-          <div class="od-row">
-            <span class="od-key">{$t('pages.contact.certificate')}</span>
-            <span class="od-val">EMO · TEDAŞ · ISO 9001:2015</span>
-          </div>
+         
         </div>
       </div>
 

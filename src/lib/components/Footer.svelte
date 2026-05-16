@@ -148,7 +148,6 @@
     </div>
     <div class="footer-bottom">
       <span>{$t('footer.copyright')}</span>
-      <span>{$t('footer.cert')}</span>
     </div>
   </div>
 </footer>

@@ -12,7 +12,7 @@
     "mainEntity": {
       "@type": "Organization",
       "name": "Kösek Enerji",
-      "foundingDate": "2001",
+      "foundingDate": "2025",
       "foundingLocation": { "@type": "Place", "name": "Antalya, Türkiye" },
       "numberOfEmployees": { "@type": "QuantitativeValue", "value": 48 }
     }

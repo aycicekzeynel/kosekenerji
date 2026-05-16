@@ -47,10 +47,10 @@
     <div class="hero-top fade-in">
       <div class="hero-top-left">
         <div class="eyebrow"><span class="blink"></span>{$t('pages.home.eyebrow')}</div>
-        <div class="hero-id">REF · KSK-2026 / 0428 · LIVE</div>
+        <div class="hero-id">REF · KSK-2025 / 0428 · LIVE</div>
       </div>
       <div class="hero-voltage">
-        <div class="voltage-readout"><div class="label">Voltaj</div><div class="value">400 kV</div></div>
+        <div class="voltage-readout"><div class="label">Voltaj</div><div class="value">400 V</div></div>
         <div class="voltage-readout"><div class="label">Frekans</div><div class="value">50.0 Hz</div></div>
         <div class="voltage-readout"><div class="label">PF</div><div class="value">0.98</div></div>
       </div>

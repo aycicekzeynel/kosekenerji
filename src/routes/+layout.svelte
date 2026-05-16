@@ -68,7 +68,7 @@
     "paymentAccepted": "Havale, EFT, Çek",
     "hasCredential": ["EMO Serbest Müşavirlik", "TEDAŞ Onaylı Müteahhit", "ISO 9001:2015"],
     "sameAs": [],
-    "foundingDate": "2001",
+    "foundingDate": "2025",
     "numberOfEmployees": { "@type": "QuantitativeValue", "value": 48 }
   };
 </script>
