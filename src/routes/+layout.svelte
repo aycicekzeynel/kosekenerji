@@ -107,12 +107,17 @@
   {@html `<script type="application/ld+json">${JSON.stringify(localBusiness)}<\/script>`}
 </svelte:head>
 
-<Nav/>
+{#if $page.url.pathname !== '/maintenance'}
+  <Nav/>
+{/if}
 <main>
   <slot/>
 </main>
-<Footer/>
+{#if $page.url.pathname !== '/maintenance'}
+  <Footer/>
+{/if}
 
+{#if $page.url.pathname !== '/maintenance'}
 <a
   href="https://wa.me/905425338047"
   target="_blank"
@@ -123,6 +128,7 @@
   <span class="wa-fab-ring"></span>
   <Icon name="WhatsApp" size={26}/>
 </a>
+{/if}
 
 <style>
   .wa-fab {
