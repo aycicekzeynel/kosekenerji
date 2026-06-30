@@ -2,7 +2,7 @@ import { redirect } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 
 export function handle({ event, resolve }) {
-  const maintenance = env.MAINTENANCE_MODE === 'true';
+  const maintenance = env.MAINTENANCE_MODE === 'false';
   const isMaintenance = event.url.pathname === '/maintenance';
 
   if (maintenance && !isMaintenance) {
